@@ -229,13 +229,43 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 3
   #temoignages { order: 5; }
   #reservation { order: 6; }
   /* SOINS POPUP on mobile */
-  .soins-grid { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 1rem !important; border: none !important; max-width: 100% !important; padding: 0 0 1rem !important; }
-  .soin-card { border: 1px solid var(--border) !important; border-radius: 12px !important; overflow: hidden !important; cursor: pointer; transition: border-color .2s, transform .2s; }
-  .soin-card:active { transform: scale(0.97); }
-  .soin-card:hover { border-color: var(--border-h) !important; }
-  .soin-card-header { display: flex !important; flex-direction: column !important; align-items: flex-start !important; padding: 1.2rem 1rem !important; cursor: pointer; min-height: 90px; }
-  .soin-card-header .soin-num { font-size: 1rem !important; margin: 0 0 .4rem 0 !important; }
-  .soin-card-header h3 { font-size: 1rem !important; line-height: 1.3 !important; margin: 0 !important; }
+  .soins-grid { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: .8rem !important; border: none !important; max-width: 100% !important; padding: 0 0 1rem !important; }
+  .soin-card {
+    border: 1px solid var(--border-h) !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    cursor: pointer !important;
+    transition: border-color .2s, transform .15s !important;
+    background: linear-gradient(135deg, #1a1006, #2d1c08) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-height: 100px !important;
+    padding: 0 !important;
+    position: relative !important;
+  }
+  .soin-card::before { display: none !important; }
+  .soin-card:active { transform: scale(0.96) !important; }
+  .soin-card-header {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 1.2rem .8rem !important;
+    cursor: pointer;
+    width: 100%;
+  }
+  .soin-card-header .soin-num { font-size: .6rem !important; letter-spacing: .25em !important; color: rgba(212,168,69,0.5) !important; margin: 0 0 .4rem 0 !important; }
+  .soin-card-header h3 {
+    font-family: 'Cormorant Garamond', serif !important;
+    font-size: 1rem !important;
+    font-weight: 400 !important;
+    font-style: italic !important;
+    line-height: 1.3 !important;
+    margin: 0 !important;
+    color: var(--gold-l) !important;
+  }
   .soin-toggle { display: none !important; }
   .soin-card-body { display: none !important; }
 
