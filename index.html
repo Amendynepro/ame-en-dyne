@@ -279,14 +279,15 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 3
   /* POPUP overlay */
   .soin-popup-overlay {
     display: none; position: fixed; inset: 0; z-index: 500;
-    background: rgba(4,2,1,0.85); backdrop-filter: blur(8px);
-    align-items: flex-end; justify-content: center;
+    background: rgba(4,2,1,0.88); backdrop-filter: blur(10px);
+    align-items: center; justify-content: center;
+    padding: 1.5rem;
   }
-  .soin-popup-overlay.open { display: flex; animation: fadeIn .2s ease; }
+  .soin-popup-overlay.open { display: flex; animation: fadeIn .25s ease; }
   .soin-popup {
     background: var(--bg2); border: 1px solid var(--border-h);
-    border-radius: 20px 20px 0 0; padding: 2rem 1.5rem 3rem;
-    width: 100%; max-height: 80vh; overflow-y: auto;
+    border-radius: 16px; padding: 2rem 1.5rem 2.5rem;
+    width: 100%; max-width: 420px; max-height: 80vh; overflow-y: auto;
     position: relative;
   }
   .soin-popup-bar {
