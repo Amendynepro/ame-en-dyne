@@ -2,6 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
+<script>history.scrollRestoration = "manual";</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Les Mains d'Âme En Dyne — Amandyne, Magnétisme & Libération Émotionnelle</title>
 <meta name="description" content="Amandyne, praticienne en magnétisme, libération émotionnelle et coupeuse de feu à Doissin, Isère. Un accompagnement profondément humain, au cœur du corps et de l'esprit.">
@@ -757,6 +758,8 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 3
 </div>
 
 <script>
+  window.scrollTo(0, 0);
+
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.1 });
