@@ -210,7 +210,6 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 3
   .soin-card-body { max-height: none !important; overflow: visible !important; }
   .soin-card-header { cursor: default; padding: 0; }
   .soin-card-header .soin-num { margin-bottom: 1rem; }
-  body { display: block; }
 }
 
 @media (max-width: 768px) {
@@ -221,17 +220,13 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 3
   .about-frame { width: 100% !important; max-width: 320px; margin: 0 auto; aspect-ratio: 4/3 !important; }
   .about-story p:nth-child(n+3) { display: none; }
   .about-quote { display: none; }
-  /* Reorder sections on mobile */
-  body { display: flex; flex-direction: column; }
-  nav, .mobile-menu { order: 0; }
+  /* Reorder sections on mobile via flex wrapper — but keep scroll intact */
   #hero { order: 1; }
   #about { order: 2; }
   #soins { order: 3; }
   #cadeaux { order: 4; }
   #temoignages { order: 5; }
   #reservation { order: 6; }
-  footer { order: 7; }
-  .footer-bottom { order: 8; }
   /* Soins accordion on mobile */
   .soins-grid { display: flex !important; flex-direction: column !important; border: none !important; gap: 0 !important; }
   .soin-card { border-left: none !important; border-right: none !important; border-top: none !important; border-bottom: 1px solid var(--border) !important; }
@@ -370,6 +365,51 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 3
   <div class="hero-scroll">Défiler <span></span></div>
 </section>
 
+<!-- MON HISTOIRE -->
+<section id="about">
+  <div class="about-inner">
+    <div class="about-visual reveal">
+      <div class="about-frame">
+        <!--
+          PHOTO D'AMANDYNE — disponible dans le PDF
+          Remplacer la div .about-initials par :
+          <img src="/assets/amandyne.jpg" alt="Amandyne" class="about-photo">
+        -->
+        <img src="/amandyne.webp" alt="Amandyne, thérapeute énergétique à Doissin" class="about-photo">
+      </div>
+      <div class="about-badge">Praticienne — Doissin, Isère</div>
+    
+        </div>
+      </div>
+    </div>
+
+    <div class="about-content reveal">
+      <span class="s-label">Mon histoire</span>
+      <h2 class="s-title">Pendant longtemps,<br><em>j'avançais coûte que coûte.</em></h2>
+
+      <div class="about-story">
+        <p>Toujours forte. Toujours présente pour les autres. Toujours capable de continuer… même lorsque l'intérieur s'épuisait doucement.</p>
+        <p>Et puis un jour, j'ai compris quelque chose d'essentiel :<br><em>Le corps ne parle jamais par hasard.</em></p>
+        <p>Derrière certaines douleurs, certaines fatigues, certaines émotions que l'on tente d'étouffer, il y a parfois des blessures silencieuses qui demandent simplement à être entendues.</p>
+        <p>C'est ce chemin-là qui m'a menée vers le magnétisme, la libération émotionnelle et une approche profondément intuitive de l'être humain.</p>
+      </div>
+
+      <blockquote class="about-quote">
+        « Ici, il n'est pas question de perfection. Il est question d'authenticité, de compréhension, d'apaisement. »
+      </blockquote>
+
+      <div class="about-story">
+        <p>Aujourd'hui, j'accompagne des personnes qui portent beaucoup. Des personnes qui ont souvent appris à tout gérer seules, épuisées d'avoir retenu, encaissé, porté en silence.</p>
+        <p>Mon approche mêle écoute, énergie, intuition et humanité. Parce que je crois profondément qu'il existe en chacun de nous une capacité à se remettre en mouvement.</p>
+      </div>
+
+      <span class="about-signature">Amandyne — Au cœur du corps &amp; de l'esprit</span>
+      <br><br>
+      <a href="#reservation" class="btn-primary">Prendre rendez-vous</a>
+    </div>
+  </div>
+</section>
+
 <!-- SOINS -->
 <section id="soins">
   <div class="soins-header reveal">
@@ -442,51 +482,6 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 3
       <a href="#reservation" class="soin-link">Prendre rendez-vous →</a>
     </div>
 
-  </div>
-</section>
-
-<!-- MON HISTOIRE -->
-<section id="about">
-  <div class="about-inner">
-    <div class="about-visual reveal">
-      <div class="about-frame">
-        <!--
-          PHOTO D'AMANDYNE — disponible dans le PDF
-          Remplacer la div .about-initials par :
-          <img src="/assets/amandyne.jpg" alt="Amandyne" class="about-photo">
-        -->
-        <img src="/amandyne.webp" alt="Amandyne, thérapeute énergétique à Doissin" class="about-photo">
-      </div>
-      <div class="about-badge">Praticienne — Doissin, Isère</div>
-    
-        </div>
-      </div>
-    </div>
-
-    <div class="about-content reveal">
-      <span class="s-label">Mon histoire</span>
-      <h2 class="s-title">Pendant longtemps,<br><em>j'avançais coûte que coûte.</em></h2>
-
-      <div class="about-story">
-        <p>Toujours forte. Toujours présente pour les autres. Toujours capable de continuer… même lorsque l'intérieur s'épuisait doucement.</p>
-        <p>Et puis un jour, j'ai compris quelque chose d'essentiel :<br><em>Le corps ne parle jamais par hasard.</em></p>
-        <p>Derrière certaines douleurs, certaines fatigues, certaines émotions que l'on tente d'étouffer, il y a parfois des blessures silencieuses qui demandent simplement à être entendues.</p>
-        <p>C'est ce chemin-là qui m'a menée vers le magnétisme, la libération émotionnelle et une approche profondément intuitive de l'être humain.</p>
-      </div>
-
-      <blockquote class="about-quote">
-        « Ici, il n'est pas question de perfection. Il est question d'authenticité, de compréhension, d'apaisement. »
-      </blockquote>
-
-      <div class="about-story">
-        <p>Aujourd'hui, j'accompagne des personnes qui portent beaucoup. Des personnes qui ont souvent appris à tout gérer seules, épuisées d'avoir retenu, encaissé, porté en silence.</p>
-        <p>Mon approche mêle écoute, énergie, intuition et humanité. Parce que je crois profondément qu'il existe en chacun de nous une capacité à se remettre en mouvement.</p>
-      </div>
-
-      <span class="about-signature">Amandyne — Au cœur du corps &amp; de l'esprit</span>
-      <br><br>
-      <a href="#reservation" class="btn-primary">Prendre rendez-vous</a>
-    </div>
   </div>
 </section>
 
@@ -750,7 +745,12 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 3
     const card = header.parentElement;
     const wasOpen = card.classList.contains('open');
     document.querySelectorAll('.soin-card').forEach(c => c.classList.remove('open'));
-    if (!wasOpen) card.classList.add('open');
+    if (!wasOpen) {
+      card.classList.add('open');
+      setTimeout(() => {
+        card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 50);
+    }
   }
 
   function toggleMenu() {
