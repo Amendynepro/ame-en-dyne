@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "name": "les-mains-dame-en-dyne",
+  "builds": [
+    { "src": "**/*", "use": "@vercel/static" }
+  ],
+  "routes": [
+    {
+      "src": "/products.json",
+      "headers": { "Access-Control-Allow-Origin": "*" },
+      "dest": "/data/products.json"
+    },
+    {
+      "src": "/mentions-legales",
+      "dest": "/pages/mentions-legales.html"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
+    }
+  ]
+}

@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Les Mains d'Âme En Dyne — Amandyne, Magnétisme & Libération Émotionnelle</title>
+<meta name="description" content="Amandyne, praticienne en magnétisme, libération émotionnelle et coupeuse de feu à Doissin, Isère. Un accompagnement profondément humain, au cœur du corps et de l'esprit.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'DM Sans', sans-serif; background: #0C0906; color: #F0E4C8; line-height: 1.7; overflow-x: hidden; }
+
+:root {
+  --bg: #0C0906; --bg2: #181008; --bg3: #221608;
+  --gold: #C9A86C; --gold-l: #E2C994;
+  --ivory: #F0E4C8; --ivory-d: rgba(240,228,200,0.6);
+  --muted: #7A6450;
+  --border: rgba(201,168,108,0.18); --border-h: rgba(201,168,108,0.4);
+  --r: 12px;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1rem 2.5rem;
+  background: rgba(12,9,6,0.93); backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border); transition: padding .3s;
+}
+.nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-weight: 400; letter-spacing: .1em; color: var(--gold); text-decoration: none; line-height: 1.2; }
+.nav-right { display: flex; align-items: center; gap: 1.8rem; }
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a { font-size: .72rem; letter-spacing: .15em; text-transform: uppercase; color: var(--ivory-d); text-decoration: none; transition: color .2s; }
+.nav-links a:hover { color: var(--gold); }
+.nav-cta { font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; padding: .5rem 1.4rem; border: 1px solid var(--gold); color: var(--gold); background: transparent; cursor: pointer; text-decoration: none; transition: background .2s, color .2s; border-radius: 2px; }
+.nav-cta:hover { background: var(--gold); color: var(--bg); }
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+.hamburger span { display: block; width: 24px; height: 1.5px; background: var(--gold); transition: all .3s; }
+.hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+/* Mobile menu */
+.mobile-menu { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 150; background: rgba(12,9,6,0.97); flex-direction: column; align-items: center; justify-content: center; gap: 2.2rem; }
+.mobile-menu.open { display: flex; }
+.mobile-menu a { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 300; color: var(--ivory-d); text-decoration: none; letter-spacing: .06em; transition: color .2s; }
+.mobile-menu a:hover { color: var(--gold); }
+.mobile-menu .m-cta { font-family: 'DM Sans', sans-serif; font-size: .78rem; letter-spacing: .2em; text-transform: uppercase; padding: .85rem 2.5rem; border: 1px solid var(--gold); color: var(--gold); margin-top: .8rem; border-radius: 2px; }
+
+/* ── BUTTONS ── */
+.btn-primary { padding: .9rem 2.2rem; background: var(--gold); color: var(--bg); font-size: .78rem; letter-spacing: .15em; text-transform: uppercase; text-decoration: none; border: none; cursor: pointer; border-radius: 2px; transition: background .2s, transform .15s; display: inline-block; }
+.btn-primary:hover { background: var(--gold-l); transform: translateY(-1px); }
+.btn-outline { padding: .9rem 2.2rem; border: 1px solid var(--border-h); color: var(--ivory-d); font-size: .78rem; letter-spacing: .15em; text-transform: uppercase; text-decoration: none; border-radius: 2px; transition: border-color .2s, color .2s, transform .15s; display: inline-block; }
+.btn-outline:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-1px); }
+
+/* ── HERO ── */
+#hero { min-height: 100svh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 7rem 2rem 5rem; position: relative; overflow: hidden; }
+.hero-bg { position: absolute; inset: 0; background: radial-gradient(ellipse 70% 50% at 50% 60%, rgba(201,168,108,0.08) 0%, transparent 70%), radial-gradient(ellipse 40% 30% at 20% 20%, rgba(180,100,60,0.05) 0%, transparent 60%); }
+.hero-ornament { width: min(260px, 72vw); height: min(260px, 72vw); margin-bottom: 1.5rem; opacity: 0; animation: fadeIn 1s .1s forwards; }
+.hero-ornament svg { width: 100%; height: 100%; }
+.hero-eyebrow { font-size: .68rem; letter-spacing: .3em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; opacity: 0; animation: fadeUp .8s .2s forwards; }
+h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.6rem, 8vw, 5.8rem); font-weight: 300; line-height: 1.08; color: var(--ivory); opacity: 0; animation: fadeUp .9s .4s forwards; }
+h1 em { font-style: italic; color: var(--gold-l); }
+.hero-tagline { font-family: 'Cormorant Garamond', serif; font-size: clamp(1rem, 2.5vw, 1.3rem); font-style: italic; color: var(--gold); margin-top: .8rem; letter-spacing: .05em; opacity: 0; animation: fadeUp .9s .5s forwards; }
+.hero-text { max-width: 560px; margin: 2rem auto; opacity: 0; animation: fadeUp .9s .6s forwards; }
+.hero-text p { font-size: clamp(.9rem, 2vw, 1rem); color: var(--ivory-d); font-weight: 300; line-height: 2; margin-bottom: .6rem; }
+.hero-text p em { font-style: italic; color: var(--gold-l); }
+.hero-text .signature { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-style: italic; color: var(--gold); margin-top: 1.2rem; display: block; }
+.hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; margin-top: 2.5rem; opacity: 0; animation: fadeUp .9s .8s forwards; }
+.hero-scroll { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: .5rem; font-size: .62rem; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); animation: fadeIn 1.5s 1.2s both; }
+.hero-scroll span { display: block; width: 1px; height: 36px; background: var(--border-h); animation: scrollLine 1.8s 1.5s infinite; }
+
+/* ── SECTION LABELS ── */
+.s-label { font-size: .65rem; letter-spacing: .35em; text-transform: uppercase; color: var(--gold); margin-bottom: .7rem; display: block; }
+.s-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.9rem, 5vw, 3rem); font-weight: 300; line-height: 1.15; color: var(--ivory); margin-bottom: .8rem; }
+.s-title em { font-style: italic; color: var(--gold-l); }
+.s-sub { font-size: .92rem; color: var(--ivory-d); font-weight: 300; line-height: 1.85; }
+.section-center { text-align: center; }
+.section-center .s-sub { max-width: 520px; margin: 0 auto; }
+
+/* ── SOINS ── */
+#soins { background: var(--bg2); padding: 6rem 2rem; }
+.soins-header { text-align: center; margin-bottom: 4rem; }
+.soins-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1px; border: 1px solid var(--border); max-width: 1100px; margin: 0 auto; }
+.soin-card { background: var(--bg2); padding: 2.5rem 2rem; border: 1px solid var(--border); transition: background .3s, border-color .3s; position: relative; overflow: hidden; }
+.soin-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform .4s; }
+.soin-card:hover { background: var(--bg3); border-color: var(--border-h); }
+.soin-card:hover::before { transform: scaleX(1); }
+.soin-num { font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 300; color: rgba(201,168,108,0.1); line-height: 1; margin-bottom: 1rem; }
+.soin-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 400; color: var(--ivory); margin-bottom: .8rem; line-height: 1.25; }
+.soin-card > p { font-size: .85rem; color: var(--ivory-d); font-weight: 300; line-height: 1.8; margin-bottom: 1.2rem; }
+.soin-tags { display: flex; gap: .5rem; flex-wrap: wrap; margin-bottom: 1.2rem; }
+.soin-tag { font-size: .62rem; letter-spacing: .1em; background: rgba(201,168,108,0.08); color: var(--gold); border: 1px solid var(--border); padding: .22rem .6rem; border-radius: 2px; }
+.soin-link { display: inline-block; margin-top: 1rem; font-size: .72rem; letter-spacing: .15em; text-transform: uppercase; color: var(--gold); text-decoration: none; border-bottom: 1px solid var(--border); padding-bottom: .15rem; transition: border-color .2s; }
+.soin-link:hover { border-color: var(--gold); }
+
+/* ── ABOUT / HISTOIRE ── */
+#about { padding: 6rem 2rem; max-width: 1100px; margin: 0 auto; }
+.about-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+.about-visual { display: flex; flex-direction: column; align-items: center; gap: 1.5rem; }
+.about-frame { width: min(320px, 85vw); aspect-ratio: 3/4; background: var(--bg3); border: 1px solid var(--border); position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.about-frame::after { content: ''; position: absolute; top: 10px; left: 10px; right: -10px; bottom: -10px; border: 1px solid var(--border); z-index: -1; }
+.about-photo { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+.about-initials { font-family: 'Cormorant Garamond', serif; font-size: 7rem; font-weight: 300; font-style: italic; color: rgba(201,168,108,0.1); }
+.about-badge { background: var(--gold); color: var(--bg); padding: .6rem 1.2rem; font-size: .62rem; letter-spacing: .15em; text-transform: uppercase; font-weight: 500; text-align: center; width: min(320px, 85vw); }
+.about-content .s-sub { max-width: 100%; margin-bottom: 1.2rem; }
+.about-quote { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 300; font-style: italic; color: var(--gold-l); border-left: 2px solid var(--gold); padding-left: 1.2rem; margin: 1.8rem 0; line-height: 1.7; }
+.about-story p { font-size: .9rem; color: var(--ivory-d); font-weight: 300; line-height: 2; margin-bottom: .7rem; }
+.about-story em { font-style: italic; color: var(--gold-l); }
+.about-signature { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-style: italic; color: var(--gold); margin-top: 1.5rem; display: block; }
+
+/* ── CARTES CADEAUX ── */
+#cadeaux { background: var(--bg2); padding: 6rem 2rem; }
+.cadeaux-inner { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+.cadeau-visual { display: flex; justify-content: center; }
+.cadeau-card-visual {
+  width: 300px; height: 180px; border: 1px solid var(--border-h);
+  background: linear-gradient(135deg, #1a1006, #2d1c08);
+  border-radius: 8px; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: .8rem;
+  position: relative; overflow: hidden;
+}
+.cadeau-card-visual::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 80% 60% at 50% 50%, rgba(201,168,108,0.08) 0%, transparent 70%); }
+.cadeau-card-title { font-family: 'Cormorant Garamond', serif; font-size: 1rem; letter-spacing: .3em; text-transform: uppercase; color: rgba(201,168,108,0.7); }
+.cadeau-card-sub { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-style: italic; font-weight: 300; color: var(--gold); }
+.cadeau-card-tag { font-size: .65rem; letter-spacing: .2em; text-transform: uppercase; color: rgba(201,168,108,0.4); }
+.cadeau-content .s-sub { margin-bottom: 1.5rem; }
+.cadeau-list { list-style: none; margin-bottom: 2rem; display: flex; flex-direction: column; gap: .7rem; }
+.cadeau-list li { font-size: .88rem; color: var(--ivory-d); font-weight: 300; display: flex; align-items: flex-start; gap: .8rem; }
+.cadeau-list li::before { content: '—'; color: var(--gold); flex-shrink: 0; }
+.cadeau-infos { display: flex; flex-direction: column; gap: .5rem; margin-bottom: 2rem; }
+.cadeau-info-item { font-size: .8rem; color: var(--muted); display: flex; align-items: center; gap: .6rem; }
+.cadeau-info-item strong { color: var(--ivory-d); }
+
+/* ── TEMOIGNAGES ── */
+#temoignages { padding: 6rem 2rem; }
+.temoignages-header { text-align: center; margin-bottom: 3.5rem; }
+.temo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; max-width: 1100px; margin: 0 auto; }
+.temo-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--r); padding: 2rem; position: relative; }
+.temo-card::before { content: '«'; font-family: 'Cormorant Garamond', serif; font-size: 5rem; color: rgba(201,168,108,0.08); position: absolute; top: .5rem; left: 1.2rem; line-height: 1; }
+.temo-text { font-size: .9rem; color: var(--ivory-d); font-weight: 300; line-height: 1.85; font-style: italic; margin-bottom: 1.2rem; position: relative; }
+.temo-author { font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); }
+.temo-placeholder { text-align: center; padding: 3rem; border: 1px dashed var(--border); border-radius: var(--r); max-width: 500px; margin: 0 auto; }
+.temo-placeholder p { font-size: .85rem; color: var(--muted); }
+
+/* ── FAQ ── */
+#faq { background: var(--bg2); padding: 6rem 2rem; }
+.faq-inner { max-width: 780px; margin: 0 auto; }
+.faq-header { text-align: center; margin-bottom: 3.5rem; }
+.faq-list { display: flex; flex-direction: column; gap: 1px; }
+.faq-item { border: 1px solid var(--border); background: var(--bg2); }
+.faq-q { display: flex; align-items: center; justify-content: space-between; padding: 1.4rem 1.8rem; cursor: pointer; transition: background .2s; gap: 1rem; }
+.faq-q:hover { background: var(--bg3); }
+.faq-q span { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 400; color: var(--ivory); line-height: 1.3; }
+.faq-icon { width: 20px; height: 20px; border: 1px solid var(--border-h); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--gold); font-size: .9rem; transition: transform .3s; }
+.faq-item.open .faq-icon { transform: rotate(45deg); }
+.faq-a { max-height: 0; overflow: hidden; transition: max-height .4s ease, padding .3s; }
+.faq-item.open .faq-a { max-height: 400px; }
+.faq-a-inner { padding: 0 1.8rem 1.5rem; font-size: .88rem; color: var(--ivory-d); font-weight: 300; line-height: 1.9; border-top: 1px solid var(--border); padding-top: 1.2rem; margin-top: 0; }
+
+/* ── RESERVATION ── */
+#reservation { padding: 6rem 2rem; }
+.res-inner { max-width: 900px; margin: 0 auto; }
+.res-header { text-align: center; margin-bottom: 3rem; }
+.res-header .s-sub { max-width: 480px; margin: 0 auto; }
+.cal-wrapper { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--r); overflow: hidden; min-height: 560px; display: flex; align-items: center; justify-content: center; }
+.cal-placeholder { text-align: center; padding: 3.5rem 2rem; display: flex; flex-direction: column; align-items: center; gap: 1.2rem; }
+.cal-placeholder-icon { font-size: 2.5rem; opacity: .3; }
+.cal-placeholder h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 300; color: var(--ivory-d); }
+.cal-placeholder p { font-size: .85rem; color: var(--muted); max-width: 320px; }
+.res-contact { display: flex; flex-direction: column; align-items: center; gap: .8rem; margin-top: 2.5rem; }
+.res-contact a { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 300; color: var(--gold); text-decoration: none; letter-spacing: .05em; }
+.res-contact a:hover { color: var(--gold-l); }
+.res-contact span { font-size: .72rem; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); }
+.res-stats { display: flex; justify-content: center; gap: 3.5rem; margin-top: 3rem; flex-wrap: wrap; }
+.res-stat { text-align: center; }
+.res-stat-val { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; color: var(--gold); margin-bottom: .3rem; }
+.res-stat-label { font-size: .65rem; letter-spacing: .15em; text-transform: uppercase; color: var(--muted); }
+
+/* ── FOOTER ── */
+footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 3.5rem 2.5rem; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 2.5rem; }
+.footer-brand .nav-logo { font-size: 1.25rem; display: block; margin-bottom: .8rem; }
+.footer-brand p { font-size: .82rem; color: var(--muted); font-weight: 300; max-width: 240px; line-height: 1.8; }
+.footer-tagline { font-family: 'Cormorant Garamond', serif; font-size: .95rem; font-style: italic; color: rgba(201,168,108,0.4); margin-top: .5rem; display: block; }
+.footer-col h5 { font-size: .62rem; letter-spacing: .25em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: .55rem; }
+.footer-col a { font-size: .82rem; color: var(--muted); text-decoration: none; transition: color .2s; }
+.footer-col a:hover { color: var(--ivory); }
+.footer-bottom { background: var(--bg2); border-top: 1px solid var(--border); padding: 1rem 2.5rem; display: flex; align-items: center; justify-content: space-between; font-size: .72rem; color: var(--muted); flex-wrap: wrap; gap: .5rem; }
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp { from{opacity:0;transform:translateY(20px);} to{opacity:1;transform:translateY(0);} }
+@keyframes fadeIn  { from{opacity:0;} to{opacity:1;} }
+@keyframes scrollLine { 0%{transform:scaleY(0);transform-origin:top;opacity:1;} 50%{transform:scaleY(1);transform-origin:top;} 51%{transform:scaleY(1);transform-origin:bottom;} 100%{transform:scaleY(0);transform-origin:bottom;opacity:0;} }
+@keyframes rotateSlow { from{transform:rotate(0deg);} to{transform:rotate(360deg);} }
+@keyframes pulse { 0%,100%{opacity:.3;} 50%{opacity:.6;} }
+.reveal { opacity:0; transform:translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.visible { opacity:1; transform:none; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .about-inner, .cadeaux-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .about-visual { order: -1; }
+}
+@media (max-width: 768px) {
+  nav { padding: 1rem 1.5rem; }
+  .nav-links, .nav-cta { display: none; }
+  .hamburger { display: flex; }
+  #hero { padding: 6rem 1.2rem 4rem; }
+  .hero-actions { flex-direction: column; align-items: center; }
+  .hero-actions a { width: 100%; max-width: 280px; text-align: center; }
+  #soins, #about, #cadeaux, #temoignages, #faq, #reservation { padding: 4rem 1.2rem; }
+  .soins-grid { grid-template-columns: 1fr; }
+  footer { grid-template-columns: 1fr 1fr; gap: 2rem; padding: 3rem 1.5rem; }
+  .footer-brand { grid-column: 1 / -1; }
+  .footer-bottom { flex-direction: column; text-align: center; padding: 1rem 1.5rem; }
+  .res-stats { gap: 2rem; }
+}
+@media (max-width: 400px) {
+  h1 { font-size: 2.3rem; }
+  .temo-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#soins"       onclick="closeMenu()">Les soins</a>
+  <a href="#about"       onclick="closeMenu()">Mon histoire</a>
+  <a href="#cadeaux"     onclick="closeMenu()">Cartes cadeaux</a>
+  <a href="#faq"         onclick="closeMenu()">FAQ</a>
+  <a href="#reservation" onclick="closeMenu()">Réserver</a>
+  <a href="#reservation" class="m-cta" onclick="closeMenu()">Prendre RDV</a>
+</div>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <a href="#" class="nav-logo">Les Mains d'Âme En Dyne</a>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="#soins">Les soins</a></li>
+      <li><a href="#about">Mon histoire</a></li>
+      <li><a href="#cadeaux">Cartes cadeaux</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#reservation">Réserver</a></li>
+    </ul>
+    <a href="#reservation" class="nav-cta">Prendre RDV</a>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-ornament">
+    <svg viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg">
+      <g style="transform-origin:160px 160px;animation:rotateSlow 40s linear infinite;">
+        <circle cx="160" cy="160" r="148" fill="none" stroke="rgba(201,168,108,0.15)" stroke-width="1"/>
+        <circle cx="160" cy="12"  r="3" fill="rgba(201,168,108,0.4)"/>
+        <circle cx="308" cy="160" r="3" fill="rgba(201,168,108,0.4)"/>
+        <circle cx="160" cy="308" r="3" fill="rgba(201,168,108,0.4)"/>
+        <circle cx="12"  cy="160" r="3" fill="rgba(201,168,108,0.4)"/>
+        <circle cx="254" cy="66"  r="2" fill="rgba(201,168,108,0.3)"/>
+        <circle cx="254" cy="254" r="2" fill="rgba(201,168,108,0.3)"/>
+        <circle cx="66"  cy="254" r="2" fill="rgba(201,168,108,0.3)"/>
+        <circle cx="66"  cy="66"  r="2" fill="rgba(201,168,108,0.3)"/>
+      </g>
+      <circle cx="160" cy="160" r="110" fill="none" stroke="rgba(201,168,108,0.1)" stroke-width="1" stroke-dasharray="4 8"/>
+      <circle cx="160" cy="160" r="80" fill="rgba(201,168,108,0.04)" stroke="rgba(201,168,108,0.2)" stroke-width="1"/>
+      <g style="animation:pulse 4s ease-in-out infinite;">
+        <ellipse cx="160" cy="110" rx="12" ry="30" fill="rgba(201,168,108,0.12)" transform="rotate(0,160,160)"/>
+        <ellipse cx="160" cy="110" rx="12" ry="30" fill="rgba(201,168,108,0.12)" transform="rotate(45,160,160)"/>
+        <ellipse cx="160" cy="110" rx="12" ry="30" fill="rgba(201,168,108,0.12)" transform="rotate(90,160,160)"/>
+        <ellipse cx="160" cy="110" rx="12" ry="30" fill="rgba(201,168,108,0.12)" transform="rotate(135,160,160)"/>
+        <ellipse cx="160" cy="110" rx="12" ry="30" fill="rgba(201,168,108,0.12)" transform="rotate(180,160,160)"/>
+        <ellipse cx="160" cy="110" rx="12" ry="30" fill="rgba(201,168,108,0.12)" transform="rotate(225,160,160)"/>
+        <ellipse cx="160" cy="110" rx="12" ry="30" fill="rgba(201,168,108,0.12)" transform="rotate(270,160,160)"/>
+        <ellipse cx="160" cy="110" rx="12" ry="30" fill="rgba(201,168,108,0.12)" transform="rotate(315,160,160)"/>
+      </g>
+      <path d="M160 175 C160 175 140 158 140 145 C140 137 147 130 155 132 C158 133 160 136 160 136 C160 136 162 133 165 132 C173 130 180 137 180 145 C180 158 160 175 160 175Z" fill="rgba(201,168,108,0.06)"/>
+      <text font-family="'Cormorant Garamond', serif" font-size="13" fill="rgba(201,168,108,0.45)" font-style="italic">
+        <textPath href="#tc">Amandyne · Au cœur du corps &amp; de l'esprit · </textPath>
+      </text>
+      <defs><path id="tc" d="M160,45 A115,115 0 1,1 159.9,45Z"/></defs>
+    </svg>
+  </div>
+
+  <p class="hero-eyebrow">Magnétisme · Libération émotionnelle · Coupeuse de feu</p>
+  <h1>Les Mains d'<em>Âme</em><br>En Dyne</h1>
+  <p class="hero-tagline">Au cœur du corps &amp; de l'esprit</p>
+
+  <div class="hero-text">
+    <p>Je rencontre chaque jour des corps épuisés d'avoir porté des blessures en silence.</p>
+    <p>Des personnes qui continuent d'avancer, de sourire, de donner,<br>
+    alors qu'à l'intérieur… <em>tout s'épuise doucement.</em></p>
+    <p>Je n'accompagne pas simplement des symptômes.<br>
+    J'accompagne ce que l'on retient, ce que l'on tait,<br>
+    ce que l'on endure depuis trop longtemps.</p>
+    <span class="signature">Amandyne</span>
+  </div>
+
+  <div class="hero-actions">
+    <a href="#reservation" class="btn-primary">Prendre rendez-vous</a>
+    <a href="#soins" class="btn-outline">Découvrir les soins</a>
+  </div>
+  <div class="hero-scroll">Défiler <span></span></div>
+</section>
+
+<!-- SOINS -->
+<section id="soins">
+  <div class="soins-header reveal">
+    <span class="s-label">Mes accompagnements</span>
+    <h2 class="s-title">Des soins <em>profondément humains</em></h2>
+    <p class="s-sub" style="max-width:520px;margin:0 auto;">Chaque séance est unique. Je prends toujours un temps d'échange pour comprendre ce que vous traversez, ce que votre corps exprime.</p>
+  </div>
+  <div class="soins-grid reveal">
+
+    <div class="soin-card">
+      <div class="soin-num">01</div>
+      <h3>Magnétisme</h3>
+      <p>Pour accompagner le corps lorsqu'il est épuisé, douloureux ou en surcharge. Un espace de détente profonde pour remettre du mouvement là où tout semblait figé.</p>
+      <div class="soin-tags">
+        <span class="soin-tag">Fatigue</span>
+        <span class="soin-tag">Tensions</span>
+        <span class="soin-tag">Douleurs</span>
+        <span class="soin-tag">Stress</span>
+        <span class="soin-tag">Sommeil</span>
+        <span class="soin-tag">Apaisement</span>
+      </div>
+      <a href="#reservation" class="soin-link">Prendre rendez-vous →</a>
+    </div>
+
+    <div class="soin-card">
+      <div class="soin-num">02</div>
+      <h3>Libération émotionnelle</h3>
+      <p>Un espace pour déposer ce qui pèse intérieurement depuis trop longtemps. Dans un cadre d'écoute bienveillant, sans jugement, pour retrouver clarté et équilibre.</p>
+      <div class="soin-tags">
+        <span class="soin-tag">Charge mentale</span>
+        <span class="soin-tag">Émotions bloquées</span>
+        <span class="soin-tag">Hypersensibilité</span>
+        <span class="soin-tag">Traumas</span>
+        <span class="soin-tag">Schémas répétitifs</span>
+      </div>
+      <a href="#reservation" class="soin-link">Prendre rendez-vous →</a>
+    </div>
+
+    <div class="soin-card">
+      <div class="soin-num">03</div>
+      <h3>Coupeuse de feu</h3>
+      <p>Accompagnement énergétique complémentaire pour apaiser certaines sensations de brûlures ou inflammations. Une approche douce et apaisante.</p>
+      <div class="soin-tags">
+        <span class="soin-tag">Brûlures</span>
+        <span class="soin-tag">Radiothérapie</span>
+        <span class="soin-tag">Zona</span>
+        <span class="soin-tag">Douleurs cutanées</span>
+        <span class="soin-tag">Inflammations</span>
+      </div>
+      <a href="#reservation" class="soin-link">Prendre rendez-vous →</a>
+    </div>
+
+    <div class="soin-card">
+      <div class="soin-num">04</div>
+      <h3>Séances intuitives corps &amp; émotions</h3>
+      <p>Parce que parfois, le corps et l'émotionnel demandent à être entendus ensemble. Une approche profondément humaine et intuitive, au cœur du corps &amp; de l'esprit.</p>
+      <div class="soin-tags">
+        <span class="soin-tag">Corps &amp; esprit</span>
+        <span class="soin-tag">Intuitif</span>
+        <span class="soin-tag">Sur mesure</span>
+        <span class="soin-tag">Global</span>
+      </div>
+      <a href="#reservation" class="soin-link">Prendre rendez-vous →</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- MON HISTOIRE -->
+<section id="about">
+  <div class="about-inner">
+    <div class="about-visual reveal">
+      <div class="about-frame">
+        <!--
+          PHOTO D'AMANDYNE — disponible dans le PDF
+          Remplacer la div .about-initials par :
+          <img src="/assets/amandyne.jpg" alt="Amandyne" class="about-photo">
+        -->
+        <div class="about-initials">A</div>
+      </div>
+      <div class="about-badge">Praticienne — Doissin, Isère</div>
+    </div>
+
+    <div class="about-content reveal">
+      <span class="s-label">Mon histoire</span>
+      <h2 class="s-title">Pendant longtemps,<br><em>j'avançais coûte que coûte.</em></h2>
+
+      <div class="about-story">
+        <p>Toujours forte. Toujours présente pour les autres. Toujours capable de continuer… même lorsque l'intérieur s'épuisait doucement.</p>
+        <p>Et puis un jour, j'ai compris quelque chose d'essentiel :<br><em>Le corps ne parle jamais par hasard.</em></p>
+        <p>Derrière certaines douleurs, certaines fatigues, certaines émotions que l'on tente d'étouffer, il y a parfois des blessures silencieuses qui demandent simplement à être entendues.</p>
+        <p>C'est ce chemin-là qui m'a menée vers le magnétisme, la libération émotionnelle et une approche profondément intuitive de l'être humain.</p>
+      </div>
+
+      <blockquote class="about-quote">
+        « Ici, il n'est pas question de perfection. Il est question d'authenticité, de compréhension, d'apaisement. »
+      </blockquote>
+
+      <div class="about-story">
+        <p>Aujourd'hui, j'accompagne des personnes qui portent beaucoup. Des personnes qui ont souvent appris à tout gérer seules, épuisées d'avoir retenu, encaissé, porté en silence.</p>
+        <p>Mon approche mêle écoute, énergie, intuition et humanité. Parce que je crois profondément qu'il existe en chacun de nous une capacité à se remettre en mouvement.</p>
+      </div>
+
+      <span class="about-signature">Amandyne — Au cœur du corps &amp; de l'esprit</span>
+      <br><br>
+      <a href="#reservation" class="btn-primary">Prendre rendez-vous</a>
+    </div>
+  </div>
+</section>
+
+<!-- CARTES CADEAUX -->
+<section id="cadeaux">
+  <div class="cadeaux-inner">
+    <div class="cadeau-visual reveal">
+      <div style="display:flex;flex-direction:column;gap:1rem;align-items:center;">
+        <div class="cadeau-card-visual">
+          <div class="cadeau-card-title">Carte Cadeau</div>
+          <div class="cadeau-card-sub">Les Mains d'Âme En Dyne</div>
+          <div class="cadeau-card-tag">Au cœur du corps &amp; de l'esprit</div>
+        </div>
+        <p style="font-size:.75rem;color:var(--muted);text-align:center;letter-spacing:.1em;">Envoyée par email · Message personnalisé</p>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <span class="s-label">Cartes cadeaux</span>
+      <h2 class="s-title">Offrir une séance,<br>c'est offrir <em>bien plus</em>.</h2>
+      <p class="s-sub" style="margin-bottom:1.5rem;">C'est offrir un moment pour souffler, se déposer, relâcher, être écouté et revenir un peu à soi.</p>
+
+      <p style="font-size:.82rem;color:var(--gold);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.8rem;">Utilisable pour :</p>
+      <ul class="cadeau-list">
+        <li>Une séance de magnétisme</li>
+        <li>Une séance de libération émotionnelle</li>
+        <li>Une séance coupeuse de feu</li>
+        <li>Un accompagnement intuitif corps &amp; émotions</li>
+      </ul>
+
+      <div class="cadeau-infos">
+        <div class="cadeau-info-item">— <strong>Achat simple et sécurisé en ligne</strong></div>
+        <div class="cadeau-info-item">— <strong>Envoi rapide par email</strong></div>
+        <div class="cadeau-info-item">— <strong>Message personnalisé possible</strong></div>
+        <div class="cadeau-info-item">— <strong>Valable 4 mois</strong> à compter de la date d'achat</div>
+        <div class="cadeau-info-item">— <strong>Utilisable sur rendez-vous</strong></div>
+      </div>
+
+      <a href="mailto:Amendynepro@gmail.com?subject=Carte cadeau — Les Mains d'Âme En Dyne" class="btn-primary">Commander une carte cadeau</a>
+      <p style="font-size:.75rem;color:var(--muted);margin-top:.8rem;">Paiement en ligne disponible · Anniversaire, Noël, Fête des mères…</p>
+    </div>
+  </div>
+</section>
+
+<!-- TEMOIGNAGES -->
+<section id="temoignages">
+  <div class="temoignages-header reveal">
+    <span class="s-label">Témoignages</span>
+    <h2 class="s-title">Ils <em>témoignent</em></h2>
+  </div>
+  <div class="temo-grid reveal">
+    <div class="temo-placeholder">
+      <p>Les premiers témoignages apparaîtront ici bientôt.</p>
+      <br>
+      <a href="mailto:Amendynepro@gmail.com" style="font-size:.75rem;color:var(--gold);">Partager votre expérience →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="faq-inner">
+    <div class="faq-header reveal">
+      <span class="s-label">Questions fréquentes</span>
+      <h2 class="s-title">Vous avez <em>des questions ?</em></h2>
+    </div>
+    <div class="faq-list reveal">
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span>Comment se déroule une séance ?</span>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-a">
+          <div class="faq-a-inner">Chaque séance est unique, parce que chaque personne l'est aussi. Je prends toujours un temps d'échange afin de comprendre ce que vous traversez, ce que votre corps exprime. Selon vos besoins, la séance peut mêler magnétisme, libération émotionnelle et approche intuitive, dans un espace profondément humain, doux et sans jugement.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span>Dois-je forcément parler pendant la séance ?</span>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-a">
+          <div class="faq-a-inner">Non. Certaines personnes ressentent le besoin de déposer beaucoup de choses, d'autres très peu. Il n'y a aucune obligation. Le plus important est que vous vous sentiez libre d'être simplement vous-même.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span>Pourquoi venir consulter ?</span>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-a">
+          <div class="faq-a-inner">Les personnes que j'accompagne viennent souvent pour : fatigue émotionnelle ou physique, stress et anxiété, douleurs ou tensions persistantes, hypersensibilité, difficultés de vie, émotions bloquées, besoin d'apaisement. Parfois, il n'y a pas "une raison précise" — simplement le besoin de souffler et de revenir un peu à soi.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span>Le magnétisme remplace-t-il un traitement médical ?</span>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-a">
+          <div class="faq-a-inner">Non. Le magnétisme et les accompagnements proposés ne remplacent jamais un suivi médical ou un traitement prescrit par un professionnel de santé. Ils interviennent dans une démarche complémentaire de mieux-être et d'apaisement.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span>Proposez-vous des séances coupeuse de feu ?</span>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-a">
+          <div class="faq-a-inner">Oui. J'accompagne également certaines douleurs ou inconforts liés aux brûlures, inflammations, radiothérapies, zonas ou sensations de chaleur importantes, dans une approche complémentaire et apaisante.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span>Combien de séances faut-il ?</span>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-a">
+          <div class="faq-a-inner">Il n'existe pas de réponse universelle. Certaines personnes ressentent un mieux-être dès la première séance, tandis que d'autres ressentent le besoin d'être accompagnées plus en profondeur. Chaque parcours est différent.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span>Où se déroulent les séances ?</span>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-a">
+          <div class="faq-a-inner">Les séances se déroulent principalement à Doissin, sur rendez-vous. Des déplacements peuvent être envisagés dans certaines situations particulières (personnes âgées, traitements lourds, difficultés importantes à se déplacer).</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- RESERVATION -->
+<section id="reservation">
+  <div class="res-inner">
+    <div class="res-header reveal">
+      <span class="s-label">Réservation</span>
+      <h2 class="s-title">Prêt·e à <em>revenir à vous</em> ?</h2>
+      <p class="s-sub">Choisissez votre créneau directement en ligne ou contactez-moi par téléphone.</p>
+    </div>
+
+    <div class="cal-wrapper reveal">
+      <!-- Remplacer ce bloc par l'iframe Brevo une fois le lien récupéré -->
+      <div class="cal-placeholder">
+        <div class="cal-placeholder-icon">📅</div>
+        <h3>Réservation en ligne</h3>
+        <p>Le calendrier Brevo s'affichera ici. En attendant, contactez Amandyne directement.</p>
+        <a href="mailto:Amendynepro@gmail.com" class="btn-primary" style="margin-top:.5rem;">Envoyer un email</a>
+      </div>
+      <!--
+        UNE FOIS LE LIEN BREVO RÉCUPÉRÉ, remplacer le bloc ci-dessus par :
+        <iframe src="VOTRE_LIEN_BREVO" width="100%" height="600px" frameborder="0"></iframe>
+      -->
+    </div>
+
+    <div class="res-contact reveal">
+      <span>Ou par téléphone :</span>
+      <a href="tel:+33631169297">06 31 16 92 97</a>
+    </div>
+
+    <div class="res-stats reveal">
+      <div class="res-stat">
+        <div class="res-stat-val">Sur RDV</div>
+        <div class="res-stat-label">Uniquement</div>
+      </div>
+      <div class="res-stat">
+        <div class="res-stat-val">Doissin</div>
+        <div class="res-stat-label">Près de Biol · Isère</div>
+      </div>
+      <div class="res-stat">
+        <div class="res-stat-val">Déplacements</div>
+        <div class="res-stat-label">Possibles sur demande</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">
+    <a href="#" class="nav-logo">Les Mains d'Âme En Dyne</a>
+    <span class="footer-tagline">Au cœur du corps &amp; de l'esprit</span>
+    <p style="margin-top:.8rem;">Amandyne · Praticienne en magnétisme, libération émotionnelle et coupeuse de feu. Doissin, Isère (38).</p>
+  </div>
+  <div class="footer-col">
+    <h5>Navigation</h5>
+    <ul>
+      <li><a href="#soins">Les soins</a></li>
+      <li><a href="#about">Mon histoire</a></li>
+      <li><a href="#cadeaux">Cartes cadeaux</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#reservation">Réserver</a></li>
+    </ul>
+  </div>
+  <div class="footer-col">
+    <h5>Contact</h5>
+    <ul>
+      <li><a href="tel:+33631169297">06 31 16 92 97</a></li>
+      <li><a href="mailto:Amendynepro@gmail.com">Amendynepro@gmail.com</a></li>
+      <li><a href="https://www.instagram.com/lesmainsdamendyne/" target="_blank">Instagram</a></li>
+      <li><a href="https://www.facebook.com/profile.php?id=100009186913084" target="_blank">Facebook</a></li>
+      <li><a href="/mentions-legales">Mentions légales</a></li>
+    </ul>
+  </div>
+</footer>
+<div class="footer-bottom">
+  <span>© 2025 Les Mains d'Âme En Dyne · Amandyne</span>
+  <span>Doissin, Isère — Fait avec soin</span>
+</div>
+
+<script>
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+  window.addEventListener('scroll', () => {
+    document.getElementById('mainNav').style.padding =
+      window.scrollY > 60 ? '.75rem 2.5rem' : '1rem 2.5rem';
+  });
+
+  function toggleMenu() {
+    const menu = document.getElementById('mobileMenu');
+    const btn  = document.getElementById('hamburger');
+    menu.classList.toggle('open');
+    btn.classList.toggle('open');
+    document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+  }
+  function closeMenu() {
+    document.getElementById('mobileMenu').classList.remove('open');
+    document.getElementById('hamburger').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function toggleFaq(el) {
+    const item = el.parentElement;
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!wasOpen) item.classList.add('open');
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+[
+  {
+    "id": "huile-essentielle-relaxante",
+    "name": "Huile essentielle relaxante",
+    "price": 28.00,
+    "description": "Mélange synergique de lavande, camomille et bois de santal pour un apaisement profond.",
+    "image": "/assets/huile-essentielle.jpg",
+    "category": "produits"
+  },
+  {
+    "id": "cristal-quartz-rose",
+    "name": "Cristal de quartz rose",
+    "price": 22.00,
+    "description": "Pierre de l'amour inconditionnel, apaise les émotions et ouvre le chakra du cœur.",
+    "image": "/assets/cristal-quartz.jpg",
+    "category": "produits"
+  },
+  {
+    "id": "bon-cadeau-1-seance",
+    "name": "Bon cadeau — 1 séance",
+    "price": 65.00,
+    "description": "Offrez un moment de bien-être unique. Valable sur tous les soins, durée 12 mois.",
+    "image": "/assets/bon-cadeau.jpg",
+    "category": "bons-cadeaux"
+  },
+  {
+    "id": "bon-cadeau-forfait-harmonie",
+    "name": "Bon cadeau — Forfait Harmonie",
+    "price": 165.00,
+    "description": "3 séances de bien-être pour un accompagnement complet. Le cadeau parfait.",
+    "image": "/assets/bon-cadeau-forfait.jpg",
+    "category": "bons-cadeaux"
+  }
+]
