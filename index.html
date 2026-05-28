@@ -230,8 +230,8 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 3
   /* Soins accordion on mobile */
   .soins-grid { display: flex !important; flex-direction: column !important; border: none !important; gap: 0 !important; }
   .soin-card { border-left: none !important; border-right: none !important; border-top: none !important; border-bottom: 1px solid var(--border) !important; }
-  .soin-card-body { max-height: 0; overflow: hidden; transition: max-height .4s ease; }
-  .soin-card.open .soin-card-body { max-height: 600px; }
+  .soin-card-body { display: none; }
+  .soin-card.open .soin-card-body { display: block; }
   .soin-card-header { display: flex; align-items: center; justify-content: space-between; cursor: pointer; padding: 1.5rem 1.2rem; }
   .soin-card-header .soin-num { margin: 0; font-size: 1.2rem; }
   .soin-card-header h3 { margin: 0; font-size: 1.2rem; }
