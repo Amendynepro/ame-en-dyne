@@ -205,6 +205,14 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 3
   .about-inner, .cadeaux-inner { grid-template-columns: 1fr; gap: 3rem; }
   .about-visual { order: -1; }
 }
+@media (min-width: 769px) {
+  .soin-card-header .soin-toggle { display: none; }
+  .soin-card-body { max-height: none !important; overflow: visible !important; }
+  .soin-card-header { cursor: default; padding: 0; }
+  .soin-card-header .soin-num { margin-bottom: 1rem; }
+  body { display: block; }
+}
+
 @media (max-width: 768px) {
   #faq { display: none; }
   #about { display: block; padding: 3rem 1.2rem; }
@@ -213,6 +221,28 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 3
   .about-frame { width: 100% !important; max-width: 320px; margin: 0 auto; aspect-ratio: 4/3 !important; }
   .about-story p:nth-child(n+3) { display: none; }
   .about-quote { display: none; }
+  /* Reorder sections on mobile */
+  body { display: flex; flex-direction: column; }
+  nav, .mobile-menu { order: 0; }
+  #hero { order: 1; }
+  #about { order: 2; }
+  #soins { order: 3; }
+  #cadeaux { order: 4; }
+  #temoignages { order: 5; }
+  #reservation { order: 6; }
+  footer { order: 7; }
+  .footer-bottom { order: 8; }
+  /* Soins accordion on mobile */
+  .soins-grid { display: flex !important; flex-direction: column !important; border: none !important; gap: 0 !important; }
+  .soin-card { border-left: none !important; border-right: none !important; border-top: none !important; border-bottom: 1px solid var(--border) !important; }
+  .soin-card-body { max-height: 0; overflow: hidden; transition: max-height .4s ease; }
+  .soin-card.open .soin-card-body { max-height: 600px; }
+  .soin-card-header { display: flex; align-items: center; justify-content: space-between; cursor: pointer; padding: 1.5rem 1.2rem; }
+  .soin-card-header .soin-num { margin: 0; font-size: 1.2rem; }
+  .soin-card-header h3 { margin: 0; font-size: 1.2rem; }
+  .soin-toggle { width: 24px; height: 24px; border: 1px solid var(--border-h); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--gold); font-size: 1rem; flex-shrink: 0; transition: transform .3s; }
+  .soin-card.open .soin-toggle { transform: rotate(45deg); }
+  .soin-card-body-inner { padding: 0 1.2rem 1.5rem; }
   .rdv-grid { grid-template-columns: 1fr !important; }
   .rdv-grid > div { padding: 1.8rem 1.2rem !important; }
   nav { padding: 1rem 1.5rem; }
@@ -350,8 +380,15 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 3
   <div class="soins-grid reveal">
 
     <div class="soin-card">
-      <div class="soin-num">01</div>
-      <h3>Magnétisme</h3>
+      <div class="soin-card-header" onclick="toggleSoin(this)">
+        <div style="display:flex;align-items:center;gap:1rem;">
+          <div class="soin-num">001</div>
+          <h3>Magnétisme</h3>
+        </div>
+        <div class="soin-toggle">+</div>
+      </div>
+      <div class="soin-card-body">
+        <div class="soin-card-body-inner">
       <p>Pour accompagner le corps lorsqu'il est épuisé, douloureux ou en surcharge. Un espace de détente profonde pour remettre du mouvement là où tout semblait figé.</p>
       <div class="soin-tags">
         <span class="soin-tag">Fatigue</span>
@@ -421,6 +458,9 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 3
         <img src="/amandyne.webp" alt="Amandyne, thérapeute énergétique à Doissin" class="about-photo">
       </div>
       <div class="about-badge">Praticienne — Doissin, Isère</div>
+    
+        </div>
+      </div>
     </div>
 
     <div class="about-content reveal">
@@ -705,6 +745,13 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 3
     document.getElementById('mainNav').style.padding =
       window.scrollY > 60 ? '.75rem 2.5rem' : '1rem 2.5rem';
   });
+
+  function toggleSoin(header) {
+    const card = header.parentElement;
+    const wasOpen = card.classList.contains('open');
+    document.querySelectorAll('.soin-card').forEach(c => c.classList.remove('open'));
+    if (!wasOpen) card.classList.add('open');
+  }
 
   function toggleMenu() {
     const menu = document.getElementById('mobileMenu');
