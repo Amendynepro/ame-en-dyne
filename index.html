@@ -10,15 +10,16 @@
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
-body { font-family: 'DM Sans', sans-serif; background: #0C0906; color: #F0E4C8; line-height: 1.7; overflow-x: hidden; }
+body { font-family: 'DM Sans', sans-serif; background: #060402; color: #F5EDD8; line-height: 1.7; overflow-x: hidden; }
 
 :root {
-  --bg: #0C0906; --bg2: #181008; --bg3: #221608;
-  --gold: #C9A86C; --gold-l: #E2C994;
-  --ivory: #F0E4C8; --ivory-d: rgba(240,228,200,0.6);
+  --bg:  #060402; --bg2: #0E0805; --bg3: #160C06;
+  --gold: #D4A845; --gold-l: #F0C860; --gold-d: #A8842E;
+  --ivory: #F5EDD8; --ivory-d: rgba(245,237,216,0.6);
   --muted: #7A6450;
-  --border: rgba(201,168,108,0.18); --border-h: rgba(201,168,108,0.4);
+  --border: rgba(212,168,69,0.18); --border-h: rgba(212,168,69,0.45);
   --r: 12px;
+  --glow: rgba(212,168,69,0.12);
 }
 
 /* ── NAV ── */
@@ -26,7 +27,7 @@ nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 200;
   display: flex; align-items: center; justify-content: space-between;
   padding: 1rem 2.5rem;
-  background: rgba(12,9,6,0.93); backdrop-filter: blur(16px);
+  background: rgba(4,2,1,0.95); backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border); transition: padding .3s;
 }
 .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-weight: 400; letter-spacing: .1em; color: var(--gold); text-decoration: none; line-height: 1.2; }
@@ -43,7 +44,7 @@ nav {
 .hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
 
 /* Mobile menu */
-.mobile-menu { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 150; background: rgba(12,9,6,0.97); flex-direction: column; align-items: center; justify-content: center; gap: 2.2rem; }
+.mobile-menu { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 150; background: rgba(4,2,1,0.98); flex-direction: column; align-items: center; justify-content: center; gap: 2.2rem; }
 .mobile-menu.open { display: flex; }
 .mobile-menu a { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 300; color: var(--ivory-d); text-decoration: none; letter-spacing: .06em; transition: color .2s; }
 .mobile-menu a:hover { color: var(--gold); }
@@ -57,7 +58,7 @@ nav {
 
 /* ── HERO ── */
 #hero { min-height: 100svh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 7rem 2rem 5rem; position: relative; overflow: hidden; }
-.hero-bg { position: absolute; inset: 0; background: radial-gradient(ellipse 70% 50% at 50% 60%, rgba(201,168,108,0.08) 0%, transparent 70%), radial-gradient(ellipse 40% 30% at 20% 20%, rgba(180,100,60,0.05) 0%, transparent 60%); }
+.hero-bg { position: absolute; inset: 0; background: radial-gradient(ellipse 80% 60% at 50% 55%, rgba(212,168,69,0.14) 0%, transparent 65%), radial-gradient(ellipse 40% 30% at 15% 15%, rgba(200,120,40,0.07) 0%, transparent 60%), radial-gradient(ellipse 30% 25% at 85% 80%, rgba(212,168,69,0.06) 0%, transparent 55%); }
 .hero-ornament { width: min(260px, 72vw); height: min(260px, 72vw); margin-bottom: 1.5rem; opacity: 0; animation: fadeIn 1s .1s forwards; }
 .hero-ornament svg { width: 100%; height: 100%; }
 .hero-eyebrow { font-size: .68rem; letter-spacing: .3em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; opacity: 0; animation: fadeUp .8s .2s forwards; }
@@ -259,32 +260,49 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 3
   <div class="hero-bg"></div>
   <div class="hero-ornament">
     <svg viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg">
-      <g style="transform-origin:160px 160px;animation:rotateSlow 40s linear infinite;">
-        <circle cx="160" cy="160" r="148" fill="none" stroke="rgba(201,168,108,0.15)" stroke-width="1"/>
-        <circle cx="160" cy="12"  r="3" fill="rgba(201,168,108,0.4)"/>
-        <circle cx="308" cy="160" r="3" fill="rgba(201,168,108,0.4)"/>
-        <circle cx="160" cy="308" r="3" fill="rgba(201,168,108,0.4)"/>
-        <circle cx="12"  cy="160" r="3" fill="rgba(201,168,108,0.4)"/>
-        <circle cx="254" cy="66"  r="2" fill="rgba(201,168,108,0.3)"/>
-        <circle cx="254" cy="254" r="2" fill="rgba(201,168,108,0.3)"/>
-        <circle cx="66"  cy="254" r="2" fill="rgba(201,168,108,0.3)"/>
-        <circle cx="66"  cy="66"  r="2" fill="rgba(201,168,108,0.3)"/>
+      <!-- Outer rotating ring -->
+      <g style="transform-origin:160px 160px;animation:rotateSlow 50s linear infinite;">
+        <circle cx="160" cy="160" r="150" fill="none" stroke="rgba(212,168,69,0.2)" stroke-width="0.8"/>
+        <circle cx="160" cy="10"  r="3.5" fill="rgba(212,168,69,0.5)"/>
+        <circle cx="310" cy="160" r="3.5" fill="rgba(212,168,69,0.5)"/>
+        <circle cx="160" cy="310" r="3.5" fill="rgba(212,168,69,0.5)"/>
+        <circle cx="10"  cy="160" r="3.5" fill="rgba(212,168,69,0.5)"/>
+        <circle cx="256" cy="64"  r="2" fill="rgba(212,168,69,0.35)"/>
+        <circle cx="256" cy="256" r="2" fill="rgba(212,168,69,0.35)"/>
+        <circle cx="64"  cy="256" r="2" fill="rgba(212,168,69,0.35)"/>
+        <circle cx="64"  cy="64"  r="2" fill="rgba(212,168,69,0.35)"/>
       </g>
-      <circle cx="160" cy="160" r="110" fill="none" stroke="rgba(201,168,108,0.1)" stroke-width="1" stroke-dasharray="4 8"/>
-      <circle cx="160" cy="160" r="80" fill="rgba(201,168,108,0.04)" stroke="rgba(201,168,108,0.2)" stroke-width="1"/>
-      <g style="animation:pulse 4s ease-in-out infinite;">
-        <ellipse cx="160" cy="110" rx="12" ry="30" fill="rgba(201,168,108,0.12)" transform="rotate(0,160,160)"/>
-        <ellipse cx="160" cy="110" rx="12" ry="30" fill="rgba(201,168,108,0.12)" transform="rotate(45,160,160)"/>
-        <ellipse cx="160" cy="110" rx="12" ry="30" fill="rgba(201,168,108,0.12)" transform="rotate(90,160,160)"/>
-        <ellipse cx="160" cy="110" rx="12" ry="30" fill="rgba(201,168,108,0.12)" transform="rotate(135,160,160)"/>
-        <ellipse cx="160" cy="110" rx="12" ry="30" fill="rgba(201,168,108,0.12)" transform="rotate(180,160,160)"/>
-        <ellipse cx="160" cy="110" rx="12" ry="30" fill="rgba(201,168,108,0.12)" transform="rotate(225,160,160)"/>
-        <ellipse cx="160" cy="110" rx="12" ry="30" fill="rgba(201,168,108,0.12)" transform="rotate(270,160,160)"/>
-        <ellipse cx="160" cy="110" rx="12" ry="30" fill="rgba(201,168,108,0.12)" transform="rotate(315,160,160)"/>
+      <!-- Middle ring -->
+      <circle cx="160" cy="160" r="112" fill="none" stroke="rgba(212,168,69,0.12)" stroke-width="0.8" stroke-dasharray="3 7"/>
+      <!-- Inner glow circle -->
+      <circle cx="160" cy="160" r="82" fill="rgba(212,168,69,0.04)" stroke="rgba(212,168,69,0.25)" stroke-width="1"/>
+      <!-- LOTUS — pétales extérieurs -->
+      <g style="animation:pulse 5s ease-in-out infinite;">
+        <ellipse cx="160" cy="108" rx="10" ry="28" fill="rgba(212,168,69,0.18)" transform="rotate(0,160,160)"/>
+        <ellipse cx="160" cy="108" rx="10" ry="28" fill="rgba(212,168,69,0.18)" transform="rotate(40,160,160)"/>
+        <ellipse cx="160" cy="108" rx="10" ry="28" fill="rgba(212,168,69,0.18)" transform="rotate(80,160,160)"/>
+        <ellipse cx="160" cy="108" rx="10" ry="28" fill="rgba(212,168,69,0.18)" transform="rotate(120,160,160)"/>
+        <ellipse cx="160" cy="108" rx="10" ry="28" fill="rgba(212,168,69,0.18)" transform="rotate(160,160,160)"/>
+        <ellipse cx="160" cy="108" rx="10" ry="28" fill="rgba(212,168,69,0.18)" transform="rotate(200,160,160)"/>
+        <ellipse cx="160" cy="108" rx="10" ry="28" fill="rgba(212,168,69,0.18)" transform="rotate(240,160,160)"/>
+        <ellipse cx="160" cy="108" rx="10" ry="28" fill="rgba(212,168,69,0.18)" transform="rotate(280,160,160)"/>
+        <ellipse cx="160" cy="108" rx="10" ry="28" fill="rgba(212,168,69,0.18)" transform="rotate(320,160,160)"/>
       </g>
-      <path d="M160 175 C160 175 140 158 140 145 C140 137 147 130 155 132 C158 133 160 136 160 136 C160 136 162 133 165 132 C173 130 180 137 180 145 C180 158 160 175 160 175Z" fill="rgba(201,168,108,0.06)"/>
-      <text font-family="'Cormorant Garamond', serif" font-size="13" fill="rgba(201,168,108,0.45)" font-style="italic">
-        <textPath href="#tc">Amandyne · Au cœur du corps &amp; de l'esprit · </textPath>
+      <!-- LOTUS — pétales intérieurs plus lumineux -->
+      <g style="animation:pulse 5s 1s ease-in-out infinite;">
+        <ellipse cx="160" cy="120" rx="7" ry="20" fill="rgba(240,200,96,0.35)" transform="rotate(0,160,160)"/>
+        <ellipse cx="160" cy="120" rx="7" ry="20" fill="rgba(240,200,96,0.35)" transform="rotate(60,160,160)"/>
+        <ellipse cx="160" cy="120" rx="7" ry="20" fill="rgba(240,200,96,0.35)" transform="rotate(120,160,160)"/>
+        <ellipse cx="160" cy="120" rx="7" ry="20" fill="rgba(240,200,96,0.35)" transform="rotate(180,160,160)"/>
+        <ellipse cx="160" cy="120" rx="7" ry="20" fill="rgba(240,200,96,0.35)" transform="rotate(240,160,160)"/>
+        <ellipse cx="160" cy="120" rx="7" ry="20" fill="rgba(240,200,96,0.35)" transform="rotate(300,160,160)"/>
+      </g>
+      <!-- Centre lotus -->
+      <circle cx="160" cy="160" r="16" fill="rgba(212,168,69,0.15)" stroke="rgba(240,200,96,0.5)" stroke-width="1"/>
+      <circle cx="160" cy="160" r="8"  fill="rgba(240,200,96,0.4)"/>
+      <!-- Texte circulaire -->
+      <text font-family="'Cormorant Garamond', serif" font-size="12" fill="rgba(212,168,69,0.5)" font-style="italic" letter-spacing="2">
+        <textPath href="#tc">Amandyne · Écoute · Énergie · Harmonie · </textPath>
       </text>
       <defs><path id="tc" d="M160,45 A115,115 0 1,1 159.9,45Z"/></defs>
     </svg>
@@ -293,6 +311,7 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 3
   <p class="hero-eyebrow">Magnétisme · Libération émotionnelle · Coupeuse de feu</p>
   <h1>Les Mains d'<em>Âme</em><br>En Dyne</h1>
   <p class="hero-tagline">Au cœur du corps &amp; de l'esprit</p>
+  <p style="font-size:.72rem;letter-spacing:.35em;text-transform:uppercase;color:rgba(212,168,69,0.55);margin-top:.6rem;opacity:0;animation:fadeUp .9s .55s forwards;">Thérapeute énergétique</p>
 
   <div class="hero-text">
     <p>Je rencontre chaque jour des corps épuisés d'avoir porté des blessures en silence.</p>
@@ -308,6 +327,7 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 3
     <a href="#reservation" class="btn-primary">Prendre rendez-vous</a>
     <a href="#soins" class="btn-outline">Découvrir les soins</a>
   </div>
+  <p style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-style:italic;color:rgba(212,168,69,0.5);letter-spacing:.08em;margin-top:2rem;opacity:0;animation:fadeUp .9s 1s forwards;">Écoute, Énergie, Harmonie</p>
   <div class="hero-scroll">Défiler <span></span></div>
 </section>
 
@@ -569,18 +589,8 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 3
       <p class="s-sub">Choisissez votre créneau directement en ligne ou contactez-moi par téléphone.</p>
     </div>
 
-    <div class="cal-wrapper reveal">
-      <!-- Remplacer ce bloc par l'iframe Brevo une fois le lien récupéré -->
-      <div class="cal-placeholder">
-        <div class="cal-placeholder-icon">📅</div>
-        <h3>Réservation en ligne</h3>
-        <p>Le calendrier Brevo s'affichera ici. En attendant, contactez Amandyne directement.</p>
-        <a href="mailto:Amendynepro@gmail.com" class="btn-primary" style="margin-top:.5rem;">Envoyer un email</a>
-      </div>
-      <!--
-        UNE FOIS LE LIEN BREVO RÉCUPÉRÉ, remplacer le bloc ci-dessus par :
-        <iframe src="VOTRE_LIEN_BREVO" width="100%" height="600px" frameborder="0"></iframe>
-      -->
+    <div class="cal-wrapper reveal" style="display:block;padding:0;">
+      <iframe src="https://meet.brevo.com/lesmainsdame" width="100%" height="620px" frameborder="0" style="display:block;border:none;"></iframe>
     </div>
 
     <div class="res-contact reveal">
