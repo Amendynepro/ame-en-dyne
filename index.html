@@ -264,16 +264,7 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 3
   .soin-popup-close { position: absolute; top: 1rem; right: 1.2rem; background: none; border: none; color: var(--muted); font-size: 1.4rem; cursor: pointer; }
 
   /* SOINS POPUP on mobile */
-  .soins-grid { display: flex !important; flex-direction: column !important; border: none !important; gap: 0 !important; }
-  .soin-card { border-left: none !important; border-right: none !important; border-top: none !important; border-bottom: 1px solid var(--border) !important; }
-  .soin-card-body { display: none; }
-  .soin-card.open .soin-card-body { display: block; }
-  .soin-card-header { display: flex; align-items: center; justify-content: space-between; cursor: pointer; padding: 1.5rem 1.2rem; }
-  .soin-card-header .soin-num { margin: 0; font-size: 1.2rem; }
-  .soin-card-header h3 { margin: 0; font-size: 1.2rem; }
-  .soin-toggle { width: 24px; height: 24px; border: 1px solid var(--border-h); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--gold); font-size: 1rem; flex-shrink: 0; transition: transform .3s; }
-  .soin-card.open .soin-toggle { transform: rotate(45deg); }
-  .soin-card-body-inner { padding: 0 1.2rem 1.5rem; }
+
   .rdv-grid { grid-template-columns: 1fr !important; }
   .rdv-grid > div { padding: 1.8rem 1.2rem !important; }
   nav { padding: 1rem 1.5rem; }
@@ -283,7 +274,6 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 3
   .hero-actions { flex-direction: column; align-items: center; }
   .hero-actions a { width: 100%; max-width: 280px; text-align: center; }
   #soins, #about, #cadeaux, #temoignages, #faq, #reservation { padding: 4rem 1.2rem; }
-  .soins-grid { grid-template-columns: 1fr; }
   footer { grid-template-columns: 1fr 1fr; gap: 2rem; padding: 3rem 1.5rem; }
   .footer-brand { grid-column: 1 / -1; }
   .footer-bottom { flex-direction: column; text-align: center; padding: 1rem 1.5rem; }
