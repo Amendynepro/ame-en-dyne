@@ -300,6 +300,50 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 3
   color: var(--gold-l); text-align: center; line-height: 1.4;
 }
 
+/* ══ REVIEW POPUP ══ */
+.review-overlay {
+  display: none; position: fixed; inset: 0; z-index: 700;
+  background: rgba(4,2,1,0.93); backdrop-filter: blur(12px);
+  align-items: center; justify-content: center; padding: 1.5rem;
+}
+.review-overlay.open { display: flex; animation: fadeIn .25s ease; }
+.review-box {
+  background: var(--bg2); border: 1px solid var(--border-h);
+  border-radius: 16px; padding: 2.5rem 2rem;
+  width: 100%; max-width: 480px;
+  position: relative; text-align: center;
+}
+.review-close { position: absolute; top: 1rem; right: 1.2rem; background: none; border: none; color: var(--muted); font-size: 1.4rem; cursor: pointer; }
+.review-title { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 300; color: var(--ivory); margin-bottom: .4rem; }
+.review-sub { font-size: .85rem; color: var(--ivory-d); margin-bottom: 2rem; }
+.stars-row { display: flex; justify-content: center; gap: .5rem; margin-bottom: 2rem; }
+.star-btn {
+  font-size: 2.2rem; cursor: pointer; background: none; border: none;
+  color: rgba(212,168,69,0.2); transition: color .15s, transform .15s;
+  padding: .2rem;
+}
+.star-btn.active, .star-btn:hover { color: var(--gold); transform: scale(1.15); }
+.review-form { display: none; text-align: left; }
+.review-form.show { display: block; }
+.review-field { margin-bottom: 1rem; }
+.review-field label { display: block; font-size: .7rem; letter-spacing: .15em; text-transform: uppercase; color: var(--gold); margin-bottom: .4rem; }
+.review-field input, .review-field textarea {
+  width: 100%; background: var(--bg3); border: 1px solid var(--border);
+  border-radius: 6px; padding: .75rem 1rem;
+  color: var(--ivory); font-family: 'DM Sans', sans-serif; font-size: .88rem;
+  outline: none; transition: border-color .2s;
+}
+.review-field input:focus, .review-field textarea:focus { border-color: var(--gold); }
+.review-field input::placeholder, .review-field textarea::placeholder { color: var(--muted); }
+.review-field textarea { resize: vertical; min-height: 90px; }
+.review-submit { width: 100%; padding: .9rem; background: var(--gold); color: var(--bg); font-size: .8rem; letter-spacing: .15em; text-transform: uppercase; border: none; border-radius: 6px; cursor: pointer; font-family: 'DM Sans', sans-serif; margin-top: .5rem; transition: background .2s; }
+.review-submit:hover { background: var(--gold-l); }
+.review-success { display: none; padding: 1rem 0; }
+.review-success-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+.review-success h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 300; color: var(--gold-l); margin-bottom: .8rem; }
+.review-success p { font-size: .88rem; color: var(--ivory-d); line-height: 1.8; }
+.star-label { font-size: .85rem; color: var(--gold); margin-bottom: 1rem; min-height: 1.4rem; font-style: italic; }
+
 .reveal { opacity:0; transform:translateY(24px); transition: opacity .7s ease, transform .7s ease; }
 .reveal.visible { opacity:1; transform:none; }
 
@@ -845,12 +889,49 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 3
     <span class="s-label">Témoignages</span>
     <h2 class="s-title">Ils <em>témoignent</em></h2>
   </div>
+  <div style="text-align:center;margin-bottom:2.5rem;" class="reveal">
+    <button onclick="openReviewPopup()" class="btn-outline" style="display:inline-flex;align-items:center;gap:.6rem;">
+      <span style="font-size:1rem;">⭐</span> Laisser un avis
+    </button>
+  </div>
+
   <div class="temo-grid reveal">
-    <div class="temo-placeholder">
-      <p>Les premiers témoignages apparaîtront ici bientôt.</p>
-      <br>
-      <a href="mailto:Amendynepro@gmail.com" style="font-size:.75rem;color:var(--gold);">Partager votre expérience →</a>
+
+    <div class="temo-card">
+      <p class="temo-text">Depuis ce matin, je n'ai plus aucune douleur au ventre. Et même, je commence à me sentir plus léger. Merci du fond du cœur Amandyne.</p>
+      <div style="display:flex;align-items:center;gap:.8rem;margin-top:1rem;">
+        <div style="width:36px;height:36px;border-radius:50%;background:var(--gold-dim);border:1px solid var(--border-h);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--gold);flex-shrink:0;">P</div>
+        <span class="temo-author">Patrick H.</span>
+      </div>
     </div>
+
+    <div class="temo-card">
+      <p class="temo-text">Pour notre première rencontre, je ressens de la douceur. Amandyne est attentive et a une clairvoyance étonnante. C'est avec une empathie subtile qu'elle cerne ma personnalité. Sa technique est agréable. J'ai ressenti un réel bienfait par la suite.</p>
+      <div style="display:flex;align-items:center;gap:.8rem;margin-top:1rem;">
+        <div style="width:36px;height:36px;border-radius:50%;background:var(--gold-dim);border:1px solid var(--border-h);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--gold);flex-shrink:0;">B</div>
+        <div>
+          <span class="temo-author">Bernadette P.</span>
+          <div style="font-size:.72rem;color:var(--muted);margin-top:.1rem;">Biol, Isère</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="temo-card">
+      <p class="temo-text">Aujourd'hui, je me sens mieux. Beaucoup moins d'oppression et d'anxiété au niveau du ventre, plus léger. J'envisagerai certainement un autre rendez-vous au bout des 21 jours.</p>
+      <div style="display:flex;align-items:center;gap:.8rem;margin-top:1rem;">
+        <div style="width:36px;height:36px;border-radius:50%;background:var(--gold-dim);border:1px solid var(--border-h);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--gold);flex-shrink:0;">S</div>
+        <span class="temo-author">Stéphane</span>
+      </div>
+    </div>
+
+    <div class="temo-card">
+      <p class="temo-text">Ça va mieux, je me sens beaucoup moins perdu et j'ai décidé d'un nouveau projet professionnel.</p>
+      <div style="display:flex;align-items:center;gap:.8rem;margin-top:1rem;">
+        <div style="width:36px;height:36px;border-radius:50%;background:var(--gold-dim);border:1px solid var(--border-h);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--gold);flex-shrink:0;">J</div>
+        <span class="temo-author">Julia</span>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -1044,6 +1125,55 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 3
   <span>Doissin, Isère — Fait avec soin</span>
 </div>
 
+<!-- REVIEW POPUP -->
+<div class="review-overlay" id="reviewPopup" onclick="closeReviewOverlay(event)">
+  <div class="review-box">
+    <button class="review-close" onclick="closeReviewPopup()">✕</button>
+
+    <div id="reviewMain">
+      <div class="review-title">Votre avis</div>
+      <p class="review-sub">Votre retour est précieux pour Amandyne 🌿</p>
+
+      <!-- Étoiles -->
+      <div class="stars-row" id="starsRow">
+        <button class="star-btn" data-val="1" onclick="selectStar(1)" onmouseover="hoverStar(1)" onmouseout="resetHover()">★</button>
+        <button class="star-btn" data-val="2" onclick="selectStar(2)" onmouseover="hoverStar(2)" onmouseout="resetHover()">★</button>
+        <button class="star-btn" data-val="3" onclick="selectStar(3)" onmouseover="hoverStar(3)" onmouseout="resetHover()">★</button>
+        <button class="star-btn" data-val="4" onclick="selectStar(4)" onmouseover="hoverStar(4)" onmouseout="resetHover()">★</button>
+        <button class="star-btn" data-val="5" onclick="selectStar(5)" onmouseover="hoverStar(5)" onmouseout="resetHover()">★</button>
+      </div>
+      <div class="star-label" id="starLabel">Cliquez sur une étoile</div>
+
+      <!-- Formulaire -->
+      <div class="review-form" id="reviewForm">
+        <form id="reviewFormEl">
+          <input type="hidden" name="_subject" id="reviewSubject" value="">
+          <input type="hidden" name="note" id="reviewNote" value="">
+          <div class="review-field">
+            <label>Votre prénom *</label>
+            <input type="text" name="prenom" placeholder="Ex : Marie" required>
+          </div>
+          <div class="review-field">
+            <label>Votre avis *</label>
+            <textarea name="avis" placeholder="Partagez votre expérience..." required></textarea>
+          </div>
+          <div class="review-field">
+            <label>Email (facultatif)</label>
+            <input type="email" name="email" placeholder="Pour qu'Amandyne puisse vous répondre">
+          </div>
+          <button type="submit" class="review-submit">Envoyer mon avis →</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="review-success" id="reviewSuccess">
+      <div class="review-success-icon" id="reviewSuccessIcon">✨</div>
+      <h4 id="reviewSuccessTitle">Merci pour votre avis !</h4>
+      <p id="reviewSuccessText">Votre retour a bien été transmis à Amandyne.</p>
+    </div>
+  </div>
+</div>
+
 <!-- NUMEROLOGIE POPUP -->
 <div class="num-popup-overlay" id="numPopup" onclick="closeNumPopup(event)">
   <div class="num-popup">
@@ -1054,7 +1184,7 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 3
       <h3>Lecture numérologique<br><em style="font-style:italic;color:var(--gold-l);">Les clés de votre chemin</em></h3>
       <span class="price">65 €</span>
 
-      <form id="numerologieForm" action="https://formspree.io/f/VOTRE_ID_FORMSPREE" method="POST">
+      <form id="numerologieForm" action="https://formspree.io/f/mykanypw" method="POST">
         <input type="hidden" name="_subject" value="Nouvelle demande de lecture numérologique — Les Mains d'Âme En Dyne">
 
         <div class="num-field">
@@ -1173,6 +1303,94 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 3
       tags: ["Corps & esprit", "Intuitif", "Sur mesure", "Global"]
     }
   ];
+
+  // ══ REVIEW SYSTEM ══
+  let selectedStars = 0;
+  const starLabels = ['', 'Très décevant', 'Décevant', 'Correct', 'Bien', 'Excellent !'];
+
+  function openReviewPopup() {
+    document.getElementById('reviewPopup').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeReviewPopup() {
+    document.getElementById('reviewPopup').classList.remove('open');
+    document.body.style.overflow = '';
+    setTimeout(() => {
+      selectedStars = 0;
+      document.querySelectorAll('.star-btn').forEach(s => s.classList.remove('active'));
+      document.getElementById('starLabel').textContent = 'Cliquez sur une étoile';
+      document.getElementById('reviewForm').classList.remove('show');
+      document.getElementById('reviewMain').style.display = 'block';
+      document.getElementById('reviewSuccess').style.display = 'none';
+      document.getElementById('reviewFormEl').reset();
+    }, 300);
+  }
+  function closeReviewOverlay(e) {
+    if (e.target === document.getElementById('reviewPopup')) closeReviewPopup();
+  }
+  function hoverStar(val) {
+    if (selectedStars > 0) return;
+    document.querySelectorAll('.star-btn').forEach((s, i) => {
+      s.classList.toggle('active', i < val);
+    });
+    document.getElementById('starLabel').textContent = starLabels[val];
+  }
+  function resetHover() {
+    if (selectedStars > 0) return;
+    document.querySelectorAll('.star-btn').forEach(s => s.classList.remove('active'));
+    document.getElementById('starLabel').textContent = 'Cliquez sur une étoile';
+  }
+  function selectStar(val) {
+    selectedStars = val;
+    document.querySelectorAll('.star-btn').forEach((s, i) => {
+      s.classList.toggle('active', i < val);
+    });
+    document.getElementById('starLabel').textContent = starLabels[val] + ' (' + val + '/5)';
+    document.getElementById('reviewNote').value = val + '/5';
+
+    if (val >= 4) {
+      document.getElementById('reviewSubject').value = '⭐ AVIS POSITIF (' + val + '/5) — À PUBLIER sur le site';
+    } else {
+      document.getElementById('reviewSubject').value = '🔒 AVIS PRIVÉ (' + val + '/5) — Ne pas publier';
+    }
+    setTimeout(() => {
+      document.getElementById('reviewForm').classList.add('show');
+    }, 200);
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('reviewFormEl');
+    if (form) {
+      form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const btn = form.querySelector('.review-submit');
+        btn.textContent = 'Envoi en cours...';
+        btn.disabled = true;
+        try {
+          const res = await fetch('https://formspree.io/f/mjgdavob', {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { 'Accept': 'application/json' }
+          });
+          document.getElementById('reviewMain').style.display = 'none';
+          const success = document.getElementById('reviewSuccess');
+          success.style.display = 'block';
+          if (selectedStars >= 4) {
+            document.getElementById('reviewSuccessIcon').textContent = '✨';
+            document.getElementById('reviewSuccessTitle').textContent = 'Merci pour votre beau retour !';
+            document.getElementById('reviewSuccessText').textContent = 'Votre témoignage a été transmis à Amandyne. Il pourra bientôt apparaître sur le site.';
+          } else {
+            document.getElementById('reviewSuccessIcon').textContent = '🙏';
+            document.getElementById('reviewSuccessTitle').textContent = 'Merci pour votre retour.';
+            document.getElementById('reviewSuccessText').textContent = 'Votre message a été transmis en privé à Amandyne. Elle reviendra vers vous si nécessaire.';
+          }
+        } catch {
+          btn.textContent = 'Erreur — réessayez';
+          btn.disabled = false;
+        }
+      });
+    }
+  });
 
   function openNumPopup() {
     document.getElementById('numPopup').classList.add('open');
