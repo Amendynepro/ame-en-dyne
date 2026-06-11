@@ -203,6 +203,99 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 3
 @keyframes scrollLine { 0%{transform:scaleY(0);transform-origin:top;opacity:1;} 50%{transform:scaleY(1);transform-origin:top;} 51%{transform:scaleY(1);transform-origin:bottom;} 100%{transform:scaleY(0);transform-origin:bottom;opacity:0;} }
 @keyframes rotateSlow { from{transform:rotate(0deg);} to{transform:rotate(360deg);} }
 @keyframes pulse { 0%,100%{opacity:.3;} 50%{opacity:.6;} }
+/* NUMEROLOGIE POPUP */
+.num-popup-overlay {
+  display: none; position: fixed; inset: 0; z-index: 600;
+  background: rgba(4,2,1,0.92); backdrop-filter: blur(12px);
+  align-items: center; justify-content: center; padding: 1.5rem;
+}
+.num-popup-overlay.open { display: flex; animation: fadeIn .25s ease; }
+.num-popup {
+  background: var(--bg2); border: 1px solid var(--border-h);
+  border-radius: 16px; padding: 2.5rem 2rem;
+  width: 100%; max-width: 520px; max-height: 90vh; overflow-y: auto;
+  position: relative;
+}
+.num-popup h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem; font-weight: 300; color: var(--ivory);
+  margin-bottom: .4rem; line-height: 1.2;
+}
+.num-popup .price {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem; color: var(--gold-l); margin-bottom: 1.5rem; display: block;
+}
+.num-field { margin-bottom: 1.2rem; }
+.num-field label {
+  display: block; font-size: .72rem; letter-spacing: .15em;
+  text-transform: uppercase; color: var(--gold); margin-bottom: .5rem;
+}
+.num-field input, .num-field textarea {
+  width: 100%; background: var(--bg3); border: 1px solid var(--border);
+  border-radius: 6px; padding: .85rem 1rem;
+  color: var(--ivory); font-family: 'DM Sans', sans-serif; font-size: .9rem;
+  outline: none; transition: border-color .2s;
+}
+.num-field input:focus, .num-field textarea:focus { border-color: var(--gold); }
+.num-field input::placeholder, .num-field textarea::placeholder { color: var(--muted); }
+.num-field textarea { resize: vertical; min-height: 80px; }
+.num-field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.num-submit {
+  width: 100%; padding: 1rem;
+  background: var(--gold); color: var(--bg);
+  font-size: .82rem; letter-spacing: .15em; text-transform: uppercase;
+  border: none; border-radius: 6px; cursor: pointer;
+  font-family: 'DM Sans', sans-serif; font-weight: 500;
+  transition: background .2s; margin-top: .5rem;
+}
+.num-submit:hover { background: var(--gold-l); }
+.num-close {
+  position: absolute; top: 1rem; right: 1.2rem;
+  background: none; border: none; color: var(--muted);
+  font-size: 1.4rem; cursor: pointer;
+}
+.num-info {
+  font-size: .8rem; color: var(--muted); line-height: 1.7;
+  border-top: 1px solid var(--border); padding-top: 1rem; margin-top: 1rem;
+}
+.num-success {
+  text-align: center; padding: 2rem 1rem; display: none;
+}
+.num-success h4 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem; color: var(--gold-l); margin-bottom: .8rem;
+}
+.num-success p { font-size: .88rem; color: var(--ivory-d); line-height: 1.8; }
+
+.boutique-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.2rem;
+  max-width: 1100px;
+  margin: 0 auto 2.5rem;
+}
+.boutique-item {
+  text-decoration: none;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--bg2);
+  transition: border-color .25s, transform .25s;
+  display: block;
+}
+.boutique-item:hover { border-color: var(--border-h); transform: translateY(-4px); }
+.boutique-soon { opacity: .55; cursor: default; }
+.boutique-soon:hover { transform: none; border-color: var(--border); }
+.boutique-img-wrap { width: 100%; aspect-ratio: 1/1; overflow: hidden; }
+.boutique-img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s; display: block; }
+.boutique-item:hover .boutique-img { transform: scale(1.04); }
+.boutique-label {
+  padding: .9rem 1rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem; font-weight: 400; font-style: italic;
+  color: var(--gold-l); text-align: center; line-height: 1.4;
+}
+
 .reveal { opacity:0; transform:translateY(24px); transition: opacity .7s ease, transform .7s ease; }
 .reveal.visible { opacity:1; transform:none; }
 
@@ -309,6 +402,75 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 3
   .nav-links, .nav-cta { display: none; }
   .hamburger { display: flex; }
   #hero { padding: 6rem 1.2rem 4rem; }
+  #boutique { padding: 4rem 1.2rem !important; }
+  #boutique .reveal[style*="grid"] { grid-template-columns: 1fr 1fr !important; gap: .8rem !important; }
+  /* NUMEROLOGIE POPUP */
+.num-popup-overlay {
+  display: none; position: fixed; inset: 0; z-index: 600;
+  background: rgba(4,2,1,0.92); backdrop-filter: blur(12px);
+  align-items: center; justify-content: center; padding: 1.5rem;
+}
+.num-popup-overlay.open { display: flex; animation: fadeIn .25s ease; }
+.num-popup {
+  background: var(--bg2); border: 1px solid var(--border-h);
+  border-radius: 16px; padding: 2.5rem 2rem;
+  width: 100%; max-width: 520px; max-height: 90vh; overflow-y: auto;
+  position: relative;
+}
+.num-popup h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem; font-weight: 300; color: var(--ivory);
+  margin-bottom: .4rem; line-height: 1.2;
+}
+.num-popup .price {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem; color: var(--gold-l); margin-bottom: 1.5rem; display: block;
+}
+.num-field { margin-bottom: 1.2rem; }
+.num-field label {
+  display: block; font-size: .72rem; letter-spacing: .15em;
+  text-transform: uppercase; color: var(--gold); margin-bottom: .5rem;
+}
+.num-field input, .num-field textarea {
+  width: 100%; background: var(--bg3); border: 1px solid var(--border);
+  border-radius: 6px; padding: .85rem 1rem;
+  color: var(--ivory); font-family: 'DM Sans', sans-serif; font-size: .9rem;
+  outline: none; transition: border-color .2s;
+}
+.num-field input:focus, .num-field textarea:focus { border-color: var(--gold); }
+.num-field input::placeholder, .num-field textarea::placeholder { color: var(--muted); }
+.num-field textarea { resize: vertical; min-height: 80px; }
+.num-field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.num-submit {
+  width: 100%; padding: 1rem;
+  background: var(--gold); color: var(--bg);
+  font-size: .82rem; letter-spacing: .15em; text-transform: uppercase;
+  border: none; border-radius: 6px; cursor: pointer;
+  font-family: 'DM Sans', sans-serif; font-weight: 500;
+  transition: background .2s; margin-top: .5rem;
+}
+.num-submit:hover { background: var(--gold-l); }
+.num-close {
+  position: absolute; top: 1rem; right: 1.2rem;
+  background: none; border: none; color: var(--muted);
+  font-size: 1.4rem; cursor: pointer;
+}
+.num-info {
+  font-size: .8rem; color: var(--muted); line-height: 1.7;
+  border-top: 1px solid var(--border); padding-top: 1rem; margin-top: 1rem;
+}
+.num-success {
+  text-align: center; padding: 2rem 1rem; display: none;
+}
+.num-success h4 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem; color: var(--gold-l); margin-bottom: .8rem;
+}
+.num-success p { font-size: .88rem; color: var(--ivory-d); line-height: 1.8; }
+
+.boutique-card { padding: 1.5rem .8rem !important; }
+  .boutique-icon { font-size: 1.6rem !important; }
+  .boutique-name { font-size: 1rem !important; }
   .hero-actions { flex-direction: column; align-items: center; }
   .hero-actions a { width: 100%; max-width: 280px; text-align: center; }
   #soins, #about, #cadeaux, #temoignages, #faq, #reservation { padding: 4rem 1.2rem; }
@@ -330,6 +492,7 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 3
   <a href="#soins"       onclick="closeMenu()">Les soins</a>
   <a href="#about"       onclick="closeMenu()">Mon histoire</a>
   <a href="#cadeaux"     onclick="closeMenu()">Cartes cadeaux</a>
+  <a href="#boutique"    onclick="closeMenu()">Boutique</a>
   <a href="#faq"         onclick="closeMenu()">FAQ</a>
   <a href="#reservation" onclick="closeMenu()">Réserver</a>
   <a href="#reservation" class="m-cta" onclick="closeMenu()">Prendre RDV</a>
@@ -343,6 +506,7 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 3
       <li><a href="#soins">Les soins</a></li>
       <li><a href="#about">Mon histoire</a></li>
       <li><a href="#cadeaux">Cartes cadeaux</a></li>
+      <li><a href="#boutique">Boutique</a></li>
       <li><a href="#faq">FAQ</a></li>
       
     </ul>
@@ -586,6 +750,91 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 3
   </div>
 </section>
 
+
+<!-- BOUTIQUE -->
+<section id="boutique" style="background:var(--bg);padding:6rem 2rem;">
+  <div style="max-width:1100px;margin:0 auto;">
+
+    <div class="reveal" style="text-align:center;margin-bottom:3.5rem;">
+      <span class="s-label">Boutique</span>
+      <h2 class="s-title">Prolongez <em>l'expérience</em></h2>
+      <p class="s-sub" style="max-width:500px;margin:0 auto;">Des produits soigneusement sélectionnés pour accompagner votre bien-être au quotidien.</p>
+    </div>
+
+    <div class="boutique-grid reveal">
+
+      <!-- Bougies Artisanales -->
+      <a href="https://buy.stripe.com/fZudRa29a3539RUgUo0oM05" target="_blank" rel="noopener" class="boutique-item">
+        <div class="boutique-img-wrap">
+          <img src="/bougies.webp" alt="Bougies Artisanales" class="boutique-img">
+        </div>
+        <div class="boutique-label">Bougies Artisanales</div>
+      </a>
+
+      <!-- Bijoux en Pierres Naturelles -->
+      <a href="https://sumup.com" target="_blank" rel="noopener" class="boutique-item">
+        <div class="boutique-img-wrap">
+          <img src="/pierre.webp" alt="Bijoux en Pierres Naturelles" class="boutique-img">
+        </div>
+        <div class="boutique-label">Bijoux en Pierres Naturelles</div>
+      </a>
+
+      <!-- Pierres & Galets de Soin -->
+      <a href="https://sumup.com" target="_blank" rel="noopener" class="boutique-item">
+        <div class="boutique-img-wrap" style="background:var(--bg3);display:flex;align-items:center;justify-content:center;">
+          <span style="font-size:3rem;">🪨</span>
+        </div>
+        <div class="boutique-label">Pierres & Galets de Soin</div>
+      </a>
+
+      <!-- Numérologie -->
+      <div onclick="openNumPopup()" class="boutique-item" style="cursor:pointer;">
+        <div class="boutique-img-wrap">
+          <img src="/numerologie.webp" alt="Numérologie" class="boutique-img">
+        </div>
+        <div class="boutique-label">Numérologie <span style="font-size:.7rem;color:var(--gold);"> — 65 €</span></div>
+      </div>
+
+      <!-- Carnets de Gratitude -->
+      <a href="https://sumup.com" target="_blank" rel="noopener" class="boutique-item">
+        <div class="boutique-img-wrap">
+          <img src="/livret.webp" alt="Carnets de Gratitude" class="boutique-img">
+        </div>
+        <div class="boutique-label">Carnets de Gratitude</div>
+      </a>
+
+      <!-- Aloe Vera -->
+      <a href="https://sumup.com" target="_blank" rel="noopener" class="boutique-item">
+        <div class="boutique-img-wrap">
+          <img src="/aloevera.webp" alt="Aloe Vera" class="boutique-img">
+        </div>
+        <div class="boutique-label">Aloe Vera</div>
+      </a>
+
+      <!-- Cartes Cadeaux -->
+      <a href="https://pay.sumup.com/b2c/Q9NSE3A9" target="_blank" rel="noopener" class="boutique-item">
+        <div class="boutique-img-wrap">
+          <img src="/cartekdo.webp" alt="Cartes Cadeaux" class="boutique-img">
+        </div>
+        <div class="boutique-label">Cartes Cadeaux</div>
+      </a>
+
+      <!-- Coffrets Bien-Être — bientôt -->
+      <div class="boutique-item boutique-soon">
+        <div class="boutique-img-wrap">
+          <img src="/coffretkdo.webp" alt="Coffrets Bien-Être" class="boutique-img" style="opacity:.6;">
+        </div>
+        <div class="boutique-label">Coffrets Bien-Être <span style="font-size:.68rem;color:var(--gold);display:block;letter-spacing:.1em;text-transform:uppercase;">Bientôt</span></div>
+      </div>
+
+    </div>
+    <div class="reveal" style="text-align:center;">
+      <p style="font-size:.78rem;color:var(--muted);">🔒 Paiement sécurisé SumUp · Livraison en France</p>
+    </div>
+
+  </div>
+</section>
+
 <!-- TEMOIGNAGES -->
 <section id="temoignages">
   <div class="temoignages-header reveal">
@@ -770,6 +1019,7 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 3
       <li><a href="#soins">Les soins</a></li>
       <li><a href="#about">Mon histoire</a></li>
       <li><a href="#cadeaux">Cartes cadeaux</a></li>
+      <li><a href="#boutique">Boutique</a></li>
       <li><a href="#faq">FAQ</a></li>
       
     </ul>
@@ -788,6 +1038,83 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 3
 <div class="footer-bottom">
   <span>© 2025 Les Mains d'Âme En Dyne · Amandyne</span>
   <span>Doissin, Isère — Fait avec soin</span>
+</div>
+
+<!-- NUMEROLOGIE POPUP -->
+<div class="num-popup-overlay" id="numPopup" onclick="closeNumPopup(event)">
+  <div class="num-popup">
+    <button class="num-close" onclick="closeNumPopupBtn()">✕</button>
+
+    <div id="numForm">
+      <span class="s-label">Numérologie</span>
+      <h3>Lecture numérologique<br><em style="font-style:italic;color:var(--gold-l);">Les clés de votre chemin</em></h3>
+      <span class="price">65 €</span>
+
+      <form id="numerologieForm" action="https://formspree.io/f/VOTRE_ID_FORMSPREE" method="POST">
+        <input type="hidden" name="_subject" value="Nouvelle demande de lecture numérologique — Les Mains d'Âme En Dyne">
+
+        <div class="num-field">
+          <label>Votre prénom &amp; nom *</label>
+          <input type="text" name="nom_complet" placeholder="Ex : Marie Dupont" required>
+        </div>
+
+        <div class="num-field">
+          <label>Email *</label>
+          <input type="email" name="email" placeholder="votre@email.fr" required>
+        </div>
+
+        <div class="num-field">
+          <label>Téléphone</label>
+          <input type="tel" name="telephone" placeholder="06 XX XX XX XX">
+        </div>
+
+        <div class="num-field">
+          <label>Date de naissance *</label>
+          <input type="date" name="date_naissance" required>
+        </div>
+
+        <div class="num-field-row">
+          <div class="num-field">
+            <label>Heure de naissance *</label>
+            <input type="time" name="heure_naissance" required>
+          </div>
+          <div class="num-field">
+            <label>Lieu de naissance *</label>
+            <input type="text" name="lieu_naissance" placeholder="Ex : Lyon, France" required>
+          </div>
+        </div>
+
+        <div class="num-field">
+          <label>Tous vos noms (nom de naissance, nom d'usage…) *</label>
+          <input type="text" name="tous_noms" placeholder="Ex : Dupont, Martin..." required>
+        </div>
+
+        <div class="num-field">
+          <label>Tous vos prénoms *</label>
+          <input type="text" name="tous_prenoms" placeholder="Ex : Marie, Anne, Claire..." required>
+        </div>
+
+        <div class="num-field">
+          <label>Message (facultatif)</label>
+          <textarea name="message" placeholder="Ce que vous souhaitez explorer, vos attentes..."></textarea>
+        </div>
+
+        <button type="submit" class="num-submit">Envoyer ma demande →</button>
+
+        <div class="num-info">
+          📧 Après réception de votre demande, Amandyne vous contactera pour confirmer et vous envoyer le lien de paiement de <strong style="color:var(--ivory);">65€</strong>.
+        </div>
+      </form>
+    </div>
+
+    <div class="num-success" id="numSuccess">
+      <div style="font-size:2.5rem;margin-bottom:1rem;">✨</div>
+      <h4>Demande envoyée !</h4>
+      <p>Amandyne vous contactera très prochainement pour confirmer votre lecture numérologique et vous transmettre le lien de paiement.</p>
+      <br>
+      <p style="color:var(--gold);">À très bientôt 🌿</p>
+    </div>
+  </div>
 </div>
 
 <!-- POPUP SOINS MOBILE -->
@@ -842,6 +1169,48 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 3
       tags: ["Corps & esprit", "Intuitif", "Sur mesure", "Global"]
     }
   ];
+
+  function openNumPopup() {
+    document.getElementById('numPopup').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeNumPopupBtn() {
+    document.getElementById('numPopup').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  function closeNumPopup(e) {
+    if (e.target === document.getElementById('numPopup')) closeNumPopupBtn();
+  }
+
+  // Formspree form submission
+  document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('numerologieForm');
+    if (form) {
+      form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const btn = form.querySelector('.num-submit');
+        btn.textContent = 'Envoi en cours...';
+        btn.disabled = true;
+        try {
+          const res = await fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { 'Accept': 'application/json' }
+          });
+          if (res.ok) {
+            document.getElementById('numForm').style.display = 'none';
+            document.getElementById('numSuccess').style.display = 'block';
+          } else {
+            btn.textContent = 'Erreur — réessayez';
+            btn.disabled = false;
+          }
+        } catch {
+          btn.textContent = 'Erreur — réessayez';
+          btn.disabled = false;
+        }
+      });
+    }
+  });
 
   function openSoinPopup(index) {
     if (window.innerWidth > 768) return;
