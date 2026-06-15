@@ -710,8 +710,6 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 3
       </div>
       <div class="about-badge">Praticienne — Doissin, Isère</div>
     
-        </div>
-      </div>
     </div>
 
     <div class="about-content reveal">
@@ -860,7 +858,7 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 3
         <div class="cadeau-info-item">— <strong>Utilisable sur rendez-vous</strong></div>
       </div>
 
-      <a href="https://pay.sumup.com/b2c/Q9NSE3A9" target="_blank" rel="noopener" class="btn-primary">Commander une carte cadeau</a>
+      <a onclick="openCartePopup(); return false;" href="#" target="_blank" rel="noopener" class="btn-primary">Commander une carte cadeau</a>
       <p style="font-size:.75rem;color:var(--muted);margin-top:.8rem;">Paiement en ligne disponible · Anniversaire, Noël, Fête des mères…</p>
     </div>
   </div>
@@ -878,30 +876,6 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 3
     </div>
 
     <div class="boutique-grid reveal">
-
-      <!-- Bougies Artisanales -->
-      <div class="boutique-item boutique-soon">
-        <div class="boutique-img-wrap">
-          <img src="/bougies.webp" alt="Bougies Artisanales" class="boutique-img" style="opacity:.5;">
-        </div>
-        <div class="boutique-label">Bougies Artisanales <span style="font-size:.68rem;color:var(--gold);display:block;letter-spacing:.1em;text-transform:uppercase;">Bientôt</span></div>
-      </div>
-
-      <!-- Bijoux en Pierres Naturelles -->
-      <div class="boutique-item boutique-soon">
-        <div class="boutique-img-wrap">
-          <img src="/pierre.webp" alt="Bijoux en Pierres Naturelles" class="boutique-img" style="opacity:.5;">
-        </div>
-        <div class="boutique-label">Bijoux en Pierres Naturelles <span style="font-size:.68rem;color:var(--gold);display:block;letter-spacing:.1em;text-transform:uppercase;">Bientôt</span></div>
-      </div>
-
-      <!-- Pierres & Galets de Soin -->
-      <div class="boutique-item boutique-soon">
-        <div class="boutique-img-wrap">
-          <img src="/pierres-galets.webp" alt="Pierres et Galets de Soin" class="boutique-img" style="opacity:.5;">
-        </div>
-        <div class="boutique-label">Pierres & Galets de Soin <span style="font-size:.68rem;color:var(--gold);display:block;letter-spacing:.1em;text-transform:uppercase;">Bientôt</span></div>
-      </div>
 
       <!-- Numérologie -->
       <div onclick="openNumPopup()" class="boutique-item" style="cursor:pointer;">
@@ -935,6 +909,30 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 3
         <div class="boutique-label">Cartes Cadeaux</div>
       </div>
 
+      <!-- Bougies Artisanales -->
+      <div class="boutique-item boutique-soon">
+        <div class="boutique-img-wrap">
+          <img src="/bougies.webp" alt="Bougies Artisanales" class="boutique-img" style="opacity:.5;">
+        </div>
+        <div class="boutique-label">Bougies Artisanales <span style="font-size:.68rem;color:var(--gold);display:block;letter-spacing:.1em;text-transform:uppercase;">Bientôt</span></div>
+      </div>
+
+      <!-- Bijoux en Pierres Naturelles -->
+      <div class="boutique-item boutique-soon">
+        <div class="boutique-img-wrap">
+          <img src="/pierre.webp" alt="Bijoux en Pierres Naturelles" class="boutique-img" style="opacity:.5;">
+        </div>
+        <div class="boutique-label">Bijoux en Pierres Naturelles <span style="font-size:.68rem;color:var(--gold);display:block;letter-spacing:.1em;text-transform:uppercase;">Bientôt</span></div>
+      </div>
+
+      <!-- Pierres & Galets de Soin -->
+      <div class="boutique-item boutique-soon">
+        <div class="boutique-img-wrap">
+          <img src="/pierres-galets.webp" alt="Pierres et Galets de Soin" class="boutique-img" style="opacity:.5;">
+        </div>
+        <div class="boutique-label">Pierres & Galets de Soin <span style="font-size:.68rem;color:var(--gold);display:block;letter-spacing:.1em;text-transform:uppercase;">Bientôt</span></div>
+      </div>
+
       <!-- Coffrets Bien-Être — bientôt -->
       <div class="boutique-item boutique-soon">
         <div class="boutique-img-wrap">
@@ -944,141 +942,62 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 3
       </div>
 
     </div>
+
     <div class="reveal" style="text-align:center;">
-      <p style="font-size:.78rem;color:var(--muted);">🔒 Paiement sécurisé SumUp · Livraison en France</p>
+      <p style="font-size:.78rem;color:var(--muted);">🔒 Paiement sécurisé · Livraison en France</p>
     </div>
 
   </div>
 </section>
 
 <!-- TEMOIGNAGES -->
-<section id="temoignages">
-  <div class="temoignages-header reveal">
-    <span class="s-label">Témoignages</span>
-    <h2 class="s-title">Ils <em>témoignent</em></h2>
-  </div>
-  <div style="text-align:center;margin-bottom:2.5rem;" class="reveal">
-    <button onclick="openReviewPopup()" class="btn-outline" style="display:inline-flex;align-items:center;gap:.6rem;">
-      <span style="font-size:1rem;">⭐</span> Laisser un avis
-    </button>
-  </div>
-
-  <div class="temo-grid reveal">
-
-    <div class="temo-card">
-      <p class="temo-text">Depuis ce matin, je n'ai plus aucune douleur au ventre. Et même, je commence à me sentir plus léger. Merci du fond du cœur Amandyne.</p>
-      <div style="display:flex;align-items:center;gap:.8rem;margin-top:1rem;">
-        <div style="width:36px;height:36px;border-radius:50%;background:var(--gold-dim);border:1px solid var(--border-h);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--gold);flex-shrink:0;">P</div>
-        <span class="temo-author">Patrick H.</span>
-      </div>
+<section id="temoignages" style="padding:6rem 2rem;">
+  <div style="max-width:1100px;margin:0 auto;">
+    <div class="temoignages-header reveal" style="text-align:center;margin-bottom:3.5rem;">
+      <span class="s-label">Témoignages</span>
+      <h2 class="s-title">Ils <em>témoignent</em></h2>
     </div>
 
-    <div class="temo-card">
-      <p class="temo-text">Pour notre première rencontre, je ressens de la douceur. Amandyne est attentive et a une clairvoyance étonnante. C'est avec une empathie subtile qu'elle cerne ma personnalité. Sa technique est agréable. J'ai ressenti un réel bienfait par la suite.</p>
-      <div style="display:flex;align-items:center;gap:.8rem;margin-top:1rem;">
-        <div style="width:36px;height:36px;border-radius:50%;background:var(--gold-dim);border:1px solid var(--border-h);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--gold);flex-shrink:0;">B</div>
-        <div>
-          <span class="temo-author">Bernadette P.</span>
-          <div style="font-size:.72rem;color:var(--muted);margin-top:.1rem;">Biol, Isère</div>
-        </div>
-      </div>
+    <div style="text-align:center;margin-bottom:2.5rem;" class="reveal">
+      <button onclick="openReviewPopup()" class="btn-outline" style="display:inline-flex;align-items:center;gap:.6rem;">
+        <span style="font-size:1rem;">⭐</span> Laisser un avis
+      </button>
     </div>
 
-    <div class="temo-card">
-      <p class="temo-text">Aujourd'hui, je me sens mieux. Beaucoup moins d'oppression et d'anxiété au niveau du ventre, plus léger. J'envisagerai certainement un autre rendez-vous au bout des 21 jours.</p>
-      <div style="display:flex;align-items:center;gap:.8rem;margin-top:1rem;">
-        <div style="width:36px;height:36px;border-radius:50%;background:var(--gold-dim);border:1px solid var(--border-h);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--gold);flex-shrink:0;">S</div>
-        <span class="temo-author">Stéphane</span>
-      </div>
-    </div>
+    <div class="temo-grid reveal">
 
-    <div class="temo-card">
-      <p class="temo-text">Ça va mieux, je me sens beaucoup moins perdu et j'ai décidé d'un nouveau projet professionnel.</p>
-      <div style="display:flex;align-items:center;gap:.8rem;margin-top:1rem;">
-        <div style="width:36px;height:36px;border-radius:50%;background:var(--gold-dim);border:1px solid var(--border-h);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--gold);flex-shrink:0;">J</div>
-        <span class="temo-author">Julia</span>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- FAQ -->
-<section id="faq">
-  <div class="faq-inner">
-    <div class="faq-header reveal">
-      <span class="s-label">Questions fréquentes</span>
-      <h2 class="s-title">Vous avez <em>des questions ?</em></h2>
-    </div>
-    <div class="faq-list reveal">
-
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          <span>Comment se déroule une séance ?</span>
-          <div class="faq-icon">+</div>
-        </div>
-        <div class="faq-a">
-          <div class="faq-a-inner">Chaque séance est unique, parce que chaque personne l'est aussi. Je prends toujours un temps d'échange afin de comprendre ce que vous traversez, ce que votre corps exprime. Selon vos besoins, la séance peut mêler magnétisme, libération émotionnelle et approche intuitive, dans un espace profondément humain, doux et sans jugement.</div>
+      <div class="temo-card">
+        <p class="temo-text">Depuis ce matin, je n'ai plus aucune douleur au ventre. Et même, je commence à me sentir plus léger. Merci du fond du cœur Amandyne.</p>
+        <div style="display:flex;align-items:center;gap:.8rem;margin-top:1rem;">
+          <div style="width:36px;height:36px;border-radius:50%;background:var(--gold-dim);border:1px solid var(--border-h);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--gold);flex-shrink:0;">P</div>
+          <span class="temo-author">Patrick H.</span>
         </div>
       </div>
 
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          <span>Dois-je forcément parler pendant la séance ?</span>
-          <div class="faq-icon">+</div>
-        </div>
-        <div class="faq-a">
-          <div class="faq-a-inner">Non. Certaines personnes ressentent le besoin de déposer beaucoup de choses, d'autres très peu. Il n'y a aucune obligation. Le plus important est que vous vous sentiez libre d'être simplement vous-même.</div>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          <span>Pourquoi venir consulter ?</span>
-          <div class="faq-icon">+</div>
-        </div>
-        <div class="faq-a">
-          <div class="faq-a-inner">Les personnes que j'accompagne viennent souvent pour : fatigue émotionnelle ou physique, stress et anxiété, douleurs ou tensions persistantes, hypersensibilité, difficultés de vie, émotions bloquées, besoin d'apaisement. Parfois, il n'y a pas "une raison précise" — simplement le besoin de souffler et de revenir un peu à soi.</div>
+      <div class="temo-card">
+        <p class="temo-text">Pour notre première rencontre, je ressens de la douceur. Amandyne est attentive et a une clairvoyance étonnante. C'est avec une empathie subtile qu'elle cerne ma personnalité. J'ai ressenti un réel bienfait par la suite.</p>
+        <div style="display:flex;align-items:center;gap:.8rem;margin-top:1rem;">
+          <div style="width:36px;height:36px;border-radius:50%;background:var(--gold-dim);border:1px solid var(--border-h);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--gold);flex-shrink:0;">B</div>
+          <div>
+            <span class="temo-author">Bernadette P.</span>
+            <div style="font-size:.72rem;color:var(--muted);margin-top:.1rem;">Biol, Isère</div>
+          </div>
         </div>
       </div>
 
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          <span>Le magnétisme remplace-t-il un traitement médical ?</span>
-          <div class="faq-icon">+</div>
-        </div>
-        <div class="faq-a">
-          <div class="faq-a-inner">Non. Le magnétisme et les accompagnements proposés ne remplacent jamais un suivi médical ou un traitement prescrit par un professionnel de santé. Ils interviennent dans une démarche complémentaire de mieux-être et d'apaisement.</div>
+      <div class="temo-card">
+        <p class="temo-text">Aujourd'hui, je me sens mieux. Beaucoup moins d'oppression et d'anxiété au niveau du ventre, plus léger. J'envisagerai certainement un autre rendez-vous au bout des 21 jours.</p>
+        <div style="display:flex;align-items:center;gap:.8rem;margin-top:1rem;">
+          <div style="width:36px;height:36px;border-radius:50%;background:var(--gold-dim);border:1px solid var(--border-h);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--gold);flex-shrink:0;">S</div>
+          <span class="temo-author">Stéphane</span>
         </div>
       </div>
 
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          <span>Proposez-vous des séances coupeuse de feu ?</span>
-          <div class="faq-icon">+</div>
-        </div>
-        <div class="faq-a">
-          <div class="faq-a-inner">Oui. J'accompagne également certaines douleurs ou inconforts liés aux brûlures, inflammations, radiothérapies, zonas ou sensations de chaleur importantes, dans une approche complémentaire et apaisante.</div>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          <span>Combien de séances faut-il ?</span>
-          <div class="faq-icon">+</div>
-        </div>
-        <div class="faq-a">
-          <div class="faq-a-inner">Il n'existe pas de réponse universelle. Certaines personnes ressentent un mieux-être dès la première séance, tandis que d'autres ressentent le besoin d'être accompagnées plus en profondeur. Chaque parcours est différent.</div>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          <span>Où se déroulent les séances ?</span>
-          <div class="faq-icon">+</div>
-        </div>
-        <div class="faq-a">
-          <div class="faq-a-inner">Les séances se déroulent principalement à Doissin, sur rendez-vous. Des déplacements peuvent être envisagés dans certaines situations particulières (personnes âgées, traitements lourds, difficultés importantes à se déplacer).</div>
+      <div class="temo-card">
+        <p class="temo-text">Ça va mieux, je me sens beaucoup moins perdu et j'ai décidé d'un nouveau projet professionnel.</p>
+        <div style="display:flex;align-items:center;gap:.8rem;margin-top:1rem;">
+          <div style="width:36px;height:36px;border-radius:50%;background:var(--gold-dim);border:1px solid var(--border-h);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--gold);flex-shrink:0;">J</div>
+          <span class="temo-author">Julia</span>
         </div>
       </div>
 
@@ -1087,27 +1006,23 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 3
 </section>
 
 <!-- RESERVATION -->
-<section id="reservation">
-  <div class="res-inner">
-    <div class="res-header reveal">
+<section id="reservation" style="padding:6rem 2rem;">
+  <div class="res-inner" style="max-width:900px;margin:0 auto;">
+    <div class="res-header reveal" style="text-align:center;margin-bottom:3rem;">
       <span class="s-label">Réservation</span>
       <h2 class="s-title">Prêt·e à <em>revenir à vous</em> ?</h2>
-      <p class="s-sub">Choisissez votre créneau directement en ligne ou contactez-moi par téléphone.</p>
+      <p class="s-sub" style="max-width:480px;margin:0 auto;">Choisissez votre créneau directement en ligne ou contactez-moi par téléphone.</p>
     </div>
 
     <div class="reveal" style="max-width:900px;margin:0 auto;">
       <div style="background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;position:relative;">
         <div style="position:absolute;inset:0;background:radial-gradient(ellipse 60% 40% at 50% 50%,rgba(212,168,69,0.05) 0%,transparent 70%);pointer-events:none;"></div>
-
-        <!-- Header -->
         <div style="padding:3rem 3rem 2rem;text-align:center;border-bottom:1px solid var(--border);">
-          <p style="font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:.8rem;">Réservation en ligne</p>
-          <h3 style="font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:300;color:var(--ivory);line-height:1.2;">Choisissez votre <em style="font-style:italic;color:var(--gold-l);">créneau</em></h3>
+          <p style="font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:.8rem;">Calendrier de réservation</p>
+          <h3 style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:var(--ivory);line-height:1.2;">Choisissez votre <em style="font-style:italic;color:var(--gold-l);">créneau</em></h3>
         </div>
-
-        <!-- Soins -->
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);" class="rdv-grid">
-          <div style="background:var(--bg2);padding:2.5rem;transition:background .3s;" onmouseover="this.style.background='var(--bg3)'" onmouseout="this.style.background='var(--bg2)'">
+          <div style="background:var(--bg2);padding:2.5rem 2rem;transition:background .3s;" onmouseover="this.style.background='var(--bg3)'" onmouseout="this.style.background='var(--bg2)'">
             <p style="font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.8rem;">Soin 01</p>
             <h4 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:var(--ivory);margin-bottom:.8rem;">Consultation Magnétisme</h4>
             <p style="font-size:.82rem;color:var(--ivory-d);font-weight:300;line-height:1.8;margin-bottom:1.5rem;">Rééquilibrage énergétique, apaisement des tensions, harmonie globale du corps et des émotions.</p>
@@ -1117,7 +1032,7 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 3
             </div>
             <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0XFTlCCqsA9jnuxvEui1jksQi2TxciOVD-atScKKy4T0IiJg3V9XUmWJtKge5l1bqbDnIaqbDx" target="_blank" rel="noopener" class="btn-primary" style="display:block;text-align:center;">Réserver ce soin</a>
           </div>
-          <div style="background:var(--bg2);padding:2.5rem;transition:background .3s;" onmouseover="this.style.background='var(--bg3)'" onmouseout="this.style.background='var(--bg2)'">
+          <div style="background:var(--bg2);padding:2.5rem 2rem;transition:background .3s;" onmouseover="this.style.background='var(--bg3)'" onmouseout="this.style.background='var(--bg2)'">
             <p style="font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.8rem;">Soin 02</p>
             <h4 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:var(--ivory);margin-bottom:.8rem;">Libération Émotionnelle</h4>
             <p style="font-size:.82rem;color:var(--ivory-d);font-weight:300;line-height:1.8;margin-bottom:1.5rem;">Identifier et relâcher les blocages émotionnels, retrouver clarté et équilibre intérieur.</p>
@@ -1128,67 +1043,63 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 3
             <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0XFTlCCqsA9jnuxvEui1jksQi2TxciOVD-atScKKy4T0IiJg3V9XUmWJtKge5l1bqbDnIaqbDx" target="_blank" rel="noopener" class="btn-primary" style="display:block;text-align:center;">Réserver ce soin</a>
           </div>
         </div>
-
-        <!-- Footer -->
         <div style="padding:1.5rem 3rem;text-align:center;border-top:1px solid var(--border);">
-          <p style="font-size:.75rem;color:var(--muted);">Confirmation immédiate par email · Doissin, Isère · 06 31 16 92 97</p>
+          <p style="font-size:.75rem;color:var(--muted);">Confirmation immédiate · Doissin, Isère · 06 31 16 92 97</p>
         </div>
-
       </div>
     </div>
 
-    <div class="res-contact reveal">
-      <span>Ou par téléphone :</span>
-      <a href="tel:+33631169297">06 31 16 92 97</a>
+    <div class="res-contact reveal" style="display:flex;flex-direction:column;align-items:center;gap:.8rem;margin-top:2.5rem;">
+      <span style="font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);">Ou par téléphone :</span>
+      <a href="tel:+33631169297" style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;color:var(--gold);text-decoration:none;">06 31 16 92 97</a>
     </div>
 
-    <div class="res-stats reveal">
-      <div class="res-stat">
-        <div class="res-stat-val">Sur RDV</div>
-        <div class="res-stat-label">Uniquement</div>
+    <div class="res-stats reveal" style="display:flex;justify-content:center;gap:3.5rem;margin-top:3rem;flex-wrap:wrap;">
+      <div style="text-align:center;">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;color:var(--gold);margin-bottom:.3rem;">Sur RDV</div>
+        <div style="font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);">Uniquement</div>
       </div>
-      <div class="res-stat">
-        <div class="res-stat-val">Doissin</div>
-        <div class="res-stat-label">Près de Biol · Isère</div>
+      <div style="text-align:center;">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;color:var(--gold);margin-bottom:.3rem;">Doissin</div>
+        <div style="font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);">Près de Biol · Isère</div>
       </div>
-      <div class="res-stat">
-        <div class="res-stat-val">Déplacements</div>
-        <div class="res-stat-label">Possibles sur demande</div>
+      <div style="text-align:center;">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;color:var(--gold);margin-bottom:.3rem;">Déplacements</div>
+        <div style="font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);">Possibles sur demande</div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- FOOTER -->
-<footer>
+<footer style="background:var(--bg2);border-top:1px solid var(--border);padding:3.5rem 2.5rem;display:grid;grid-template-columns:2fr 1fr 1fr;gap:2.5rem;">
   <div class="footer-brand">
-    <a href="#" class="nav-logo">Les Mains d'Âme En Dyne</a>
-    <span class="footer-tagline">Au cœur du corps &amp; de l'esprit</span>
-    <p style="margin-top:.8rem;">Amandyne · Praticienne en magnétisme, libération émotionnelle et coupeuse de feu. Doissin, Isère (38).</p>
+    <a href="#" class="nav-logo" style="font-size:1.25rem;display:block;margin-bottom:.8rem;">Les Mains d'Âme En Dyne</a>
+    <span style="font-family:'Cormorant Garamond',serif;font-size:.95rem;font-style:italic;color:rgba(201,168,108,0.4);display:block;margin-bottom:.5rem;">Au cœur du corps &amp; de l'esprit</span>
+    <p style="font-size:.82rem;color:var(--muted);font-weight:300;max-width:240px;line-height:1.8;">Amandyne · Praticienne en magnétisme, libération émotionnelle et coupeuse de feu. Doissin, Isère (38).</p>
   </div>
   <div class="footer-col">
-    <h5>Navigation</h5>
-    <ul>
-      <li><a href="#soins">Les soins</a></li>
-      <li><a href="#about">Mon histoire</a></li>
-      <li><a href="#cadeaux">Cartes cadeaux</a></li>
-      <li><a href="#boutique">Boutique</a></li>
-      <li><a href="#faq">FAQ</a></li>
-      
+    <h5 style="font-size:.62rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;">Navigation</h5>
+    <ul style="list-style:none;display:flex;flex-direction:column;gap:.55rem;">
+      <li><a href="#soins" style="font-size:.82rem;color:var(--muted);text-decoration:none;">Les soins</a></li>
+      <li><a href="#about" style="font-size:.82rem;color:var(--muted);text-decoration:none;">Mon histoire</a></li>
+      <li><a href="#boutique" style="font-size:.82rem;color:var(--muted);text-decoration:none;">Boutique</a></li>
+      <li><a href="#temoignages" style="font-size:.82rem;color:var(--muted);text-decoration:none;">Témoignages</a></li>
+      <li><a href="#reservation" style="font-size:.82rem;color:var(--muted);text-decoration:none;">Réserver</a></li>
     </ul>
   </div>
   <div class="footer-col">
-    <h5>Contact</h5>
-    <ul>
-      <li><a href="tel:+33631169297">06 31 16 92 97</a></li>
-      <li><a href="mailto:Amendynepro@gmail.com">Amendynepro@gmail.com</a></li>
-      <li><a href="https://www.instagram.com/lesmainsdamendyne/" target="_blank">Instagram</a></li>
-      <li><a href="https://www.facebook.com/profile.php?id=100009186913084" target="_blank">Facebook</a></li>
-      <li><a href="/mentions-legales">Mentions légales</a></li>
+    <h5 style="font-size:.62rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;">Contact</h5>
+    <ul style="list-style:none;display:flex;flex-direction:column;gap:.55rem;">
+      <li><a href="tel:+33631169297" style="font-size:.82rem;color:var(--muted);text-decoration:none;">06 31 16 92 97</a></li>
+      <li><a href="mailto:Amendynepro@gmail.com" style="font-size:.82rem;color:var(--muted);text-decoration:none;">Amendynepro@gmail.com</a></li>
+      <li><a href="https://www.instagram.com/lesmainsdamendyne/" target="_blank" style="font-size:.82rem;color:var(--muted);text-decoration:none;">Instagram</a></li>
+      <li><a href="https://www.facebook.com/profile.php?id=100009186913084" target="_blank" style="font-size:.82rem;color:var(--muted);text-decoration:none;">Facebook</a></li>
+      <li><a href="/mentions-legales" style="font-size:.82rem;color:var(--muted);text-decoration:none;">Mentions légales</a></li>
     </ul>
   </div>
 </footer>
-<div class="footer-bottom">
+<div style="background:var(--bg2);border-top:1px solid var(--border);padding:1rem 2.5rem;display:flex;align-items:center;justify-content:space-between;font-size:.72rem;color:var(--muted);flex-wrap:wrap;gap:.5rem;">
   <span>© 2025 Les Mains d'Âme En Dyne · Amandyne</span>
   <span>Doissin, Isère — Fait avec soin</span>
 </div>
@@ -1198,51 +1109,38 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 3
   <div class="aloe-box">
     <button class="popup-close-btn" onclick="closeAloePopup()">✕</button>
     <h3>Aloe Vera</h3>
-    <p class="popup-sub">Découvrez notre sélection de produits Forever Living à base d'Aloe Vera pur.</p>
+    <p class="popup-sub">Découvrez notre sélection Forever Living à base d'Aloe Vera pur.</p>
     <div class="aloe-grid">
-
       <a href="https://www.foreverliving.fr/FR/fr/product-detail/641" target="_blank" rel="noopener" class="aloe-product">
         <div class="aloe-product-icon">🌿</div>
         <div class="aloe-product-name">After Shampoing</div>
-        <div class="aloe-product-desc">Soin après-shampooing à l'Aloe Vera</div>
         <span class="aloe-product-link">Découvrir →</span>
       </a>
-
       <a href="https://www.foreverliving.fr/FR/fr/product-detail/640" target="_blank" rel="noopener" class="aloe-product">
         <div class="aloe-product-icon">🌿</div>
         <div class="aloe-product-name">Shampooing</div>
-        <div class="aloe-product-desc">Shampooing doux à l'Aloe Vera</div>
         <span class="aloe-product-link">Découvrir →</span>
       </a>
-
       <a href="https://www.foreverliving.fr/FR/fr/product-detail/40" target="_blank" rel="noopener" class="aloe-product">
         <div class="aloe-product-icon">🌱</div>
         <div class="aloe-product-name">Aloe First</div>
-        <div class="aloe-product-desc">Spray apaisant multi-usages</div>
         <span class="aloe-product-link">Découvrir →</span>
       </a>
-
       <a href="https://www.foreverliving.fr/FR/fr/product-detail/834" target="_blank" rel="noopener" class="aloe-product">
         <div class="aloe-product-icon">🫐</div>
         <div class="aloe-product-name">Aloe Berry Nectar</div>
-        <div class="aloe-product-desc">Boisson à l'Aloe Vera & fruits rouges</div>
         <span class="aloe-product-link">Découvrir →</span>
       </a>
-
       <a href="https://www.foreverliving.fr/FR/fr/product-detail/836" target="_blank" rel="noopener" class="aloe-product">
         <div class="aloe-product-icon">🥭</div>
         <div class="aloe-product-name">Forever Aloe Mango</div>
-        <div class="aloe-product-desc">Boisson à l'Aloe Vera & mangue</div>
         <span class="aloe-product-link">Découvrir →</span>
       </a>
-
       <a href="https://www.foreverliving.fr/FR/fr/product-detail/815" target="_blank" rel="noopener" class="aloe-product">
         <div class="aloe-product-icon">🌵</div>
         <div class="aloe-product-name">Pulpe d'Aloe Vera</div>
-        <div class="aloe-product-desc">Gel d'Aloe Vera pur à boire</div>
         <span class="aloe-product-link">Découvrir →</span>
       </a>
-
     </div>
   </div>
 </div>
@@ -1251,118 +1149,33 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 3
 <div class="carte-overlay" id="cartePopup" onclick="closeCarteOverlay(event)">
   <div class="carte-box">
     <button class="popup-close-btn" onclick="closeCartePopup()">✕</button>
-
     <div id="carteMain">
       <h3>Carte Cadeau</h3>
       <p class="popup-sub">Offrez un moment de bien-être unique. Complétez le formulaire ci-dessous.</p>
-
       <form id="carteFormEl" action="https://formspree.io/f/mjgdavob" method="POST">
-        <input type="hidden" name="_subject" value="🎁 Nouvelle commande de carte cadeau — Les Mains d'Âme En Dyne">
-
-        <!-- Prestations -->
+        <input type="hidden" name="_subject" value="🎁 Nouvelle commande de carte cadeau">
         <div style="margin-bottom:1.5rem;">
           <label style="display:block;font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:.8rem;">Cette carte cadeau donne accès à :</label>
           <div class="carte-check-group">
-            <label class="carte-check-label">
-              <input type="checkbox" name="prestation" value="Séance de magnétisme">
-              Séance de magnétisme
-            </label>
-            <label class="carte-check-label">
-              <input type="checkbox" name="prestation" value="Libération émotionnelle">
-              Libération émotionnelle
-            </label>
-            <label class="carte-check-label">
-              <input type="checkbox" name="prestation" value="Lecture numérologique">
-              Lecture numérologique
-            </label>
-            <label class="carte-check-label">
-              <input type="checkbox" name="prestation_libre" value="Montant libre">
-              Montant libre :
-              <input type="text" name="montant_libre" placeholder="Ex : 50 €">
-            </label>
+            <label class="carte-check-label"><input type="checkbox" name="prestation" value="Séance de magnétisme"> Séance de magnétisme</label>
+            <label class="carte-check-label"><input type="checkbox" name="prestation" value="Libération émotionnelle"> Libération émotionnelle</label>
+            <label class="carte-check-label"><input type="checkbox" name="prestation" value="Lecture numérologique"> Lecture numérologique</label>
+            <label class="carte-check-label"><input type="checkbox" name="prestation_libre" value="Montant libre"> Montant libre : <input type="text" name="montant_libre" placeholder="Ex : 50 €"></label>
           </div>
         </div>
-
-        <!-- Infos -->
-        <div class="carte-field">
-          <label>Offerte à *</label>
-          <input type="text" name="offerte_a" placeholder="Prénom et nom du bénéficiaire" required>
-        </div>
-        <div class="carte-field">
-          <label>Offerte par *</label>
-          <input type="text" name="offerte_par" placeholder="Votre prénom et nom" required>
-        </div>
-        <div class="carte-field">
-          <label>Pour l'occasion de</label>
-          <input type="text" name="occasion" placeholder="Ex : Anniversaire, Noël, Fête des mères…">
-        </div>
-        <div class="carte-field">
-          <label>Votre email *</label>
-          <input type="email" name="email" placeholder="Pour recevoir la confirmation" required>
-        </div>
-        <div class="carte-field">
-          <label>Message personnalisé</label>
-          <textarea name="message" placeholder="Le message qui accompagnera la carte cadeau…"></textarea>
-        </div>
-
+        <div class="carte-field"><label>Offerte à *</label><input type="text" name="offerte_a" placeholder="Prénom et nom du bénéficiaire" required></div>
+        <div class="carte-field"><label>Offerte par *</label><input type="text" name="offerte_par" placeholder="Votre prénom et nom" required></div>
+        <div class="carte-field"><label>Pour l'occasion de</label><input type="text" name="occasion" placeholder="Ex : Anniversaire, Noël…"></div>
+        <div class="carte-field"><label>Votre email *</label><input type="email" name="email" placeholder="Pour recevoir la confirmation" required></div>
+        <div class="carte-field"><label>Message personnalisé</label><textarea name="message" placeholder="Le message qui accompagnera la carte…"></textarea></div>
         <button type="submit" class="carte-submit">Envoyer ma demande →</button>
-        <p style="font-size:.72rem;color:var(--muted);text-align:center;margin-top:.8rem;">Amandyne vous contactera pour le paiement et l'envoi de la carte par email.</p>
+        <p style="font-size:.72rem;color:var(--muted);text-align:center;margin-top:.8rem;">Amandyne vous contactera pour le paiement et l'envoi par email.</p>
       </form>
     </div>
-
-    <div id="carteSuccess" style="display:none;text-align:center;padding:2rem 1rem;">
+    <div id="carteSuccess" style="display:none;text-align:center;padding:2rem;">
       <div style="font-size:2.5rem;margin-bottom:1rem;">🎁</div>
       <h4 style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;color:var(--gold-l);margin-bottom:.8rem;">Demande envoyée !</h4>
-      <p style="font-size:.88rem;color:var(--ivory-d);line-height:1.8;">Amandyne vous contactera très prochainement pour finaliser votre carte cadeau et vous l'envoyer par email. 🌿</p>
-    </div>
-  </div>
-</div>
-
-<!-- REVIEW POPUP -->
-<div class="review-overlay" id="reviewPopup" onclick="closeReviewOverlay(event)">
-  <div class="review-box">
-    <button class="review-close" onclick="closeReviewPopup()">✕</button>
-
-    <div id="reviewMain">
-      <div class="review-title">Votre avis</div>
-      <p class="review-sub">Votre retour est précieux pour Amandyne 🌿</p>
-
-      <!-- Étoiles -->
-      <div class="stars-row" id="starsRow">
-        <button class="star-btn" data-val="1" onclick="selectStar(1)" onmouseover="hoverStar(1)" onmouseout="resetHover()">★</button>
-        <button class="star-btn" data-val="2" onclick="selectStar(2)" onmouseover="hoverStar(2)" onmouseout="resetHover()">★</button>
-        <button class="star-btn" data-val="3" onclick="selectStar(3)" onmouseover="hoverStar(3)" onmouseout="resetHover()">★</button>
-        <button class="star-btn" data-val="4" onclick="selectStar(4)" onmouseover="hoverStar(4)" onmouseout="resetHover()">★</button>
-        <button class="star-btn" data-val="5" onclick="selectStar(5)" onmouseover="hoverStar(5)" onmouseout="resetHover()">★</button>
-      </div>
-      <div class="star-label" id="starLabel">Cliquez sur une étoile</div>
-
-      <!-- Formulaire -->
-      <div class="review-form" id="reviewForm">
-        <form id="reviewFormEl">
-          <input type="hidden" name="_subject" id="reviewSubject" value="">
-          <input type="hidden" name="note" id="reviewNote" value="">
-          <div class="review-field">
-            <label>Votre prénom *</label>
-            <input type="text" name="prenom" placeholder="Ex : Marie" required>
-          </div>
-          <div class="review-field">
-            <label>Votre avis *</label>
-            <textarea name="avis" placeholder="Partagez votre expérience..." required></textarea>
-          </div>
-          <div class="review-field">
-            <label>Email (facultatif)</label>
-            <input type="email" name="email" placeholder="Pour qu'Amandyne puisse vous répondre">
-          </div>
-          <button type="submit" class="review-submit">Envoyer mon avis →</button>
-        </form>
-      </div>
-    </div>
-
-    <div class="review-success" id="reviewSuccess">
-      <div class="review-success-icon" id="reviewSuccessIcon">✨</div>
-      <h4 id="reviewSuccessTitle">Merci pour votre avis !</h4>
-      <p id="reviewSuccessText">Votre retour a bien été transmis à Amandyne.</p>
+      <p style="font-size:.88rem;color:var(--ivory-d);line-height:1.8;">Amandyne vous contactera très prochainement. 🌿</p>
     </div>
   </div>
 </div>
@@ -1371,80 +1184,38 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 3
 <div class="num-popup-overlay" id="numPopup" onclick="closeNumPopup(event)">
   <div class="num-popup">
     <button class="num-close" onclick="closeNumPopupBtn()">✕</button>
-
     <div id="numForm">
       <span class="s-label">Numérologie</span>
-      <h3>Lecture numérologique<br><em style="font-style:italic;color:var(--gold-l);">Les clés de votre chemin</em></h3>
-      <span class="price">65 €</span>
-
+      <h3 class="num-popup-title">Lecture numérologique<br><em style="font-style:italic;color:var(--gold-l);">Les clés de votre chemin</em></h3>
+      <span class="num-popup-price" style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--gold-l);margin-bottom:1.5rem;display:block;">65 €</span>
       <form id="numerologieForm" action="https://formspree.io/f/mykanypw" method="POST">
-        <input type="hidden" name="_subject" value="Nouvelle demande de lecture numérologique — Les Mains d'Âme En Dyne">
-
-        <div class="num-field">
-          <label>Votre prénom &amp; nom *</label>
-          <input type="text" name="nom_complet" placeholder="Ex : Marie Dupont" required>
-        </div>
-
-        <div class="num-field">
-          <label>Email *</label>
-          <input type="email" name="email" placeholder="votre@email.fr" required>
-        </div>
-
-        <div class="num-field">
-          <label>Téléphone</label>
-          <input type="tel" name="telephone" placeholder="06 XX XX XX XX">
-        </div>
-
-        <div class="num-field">
-          <label>Date de naissance *</label>
-          <input type="date" name="date_naissance" required>
-        </div>
-
+        <input type="hidden" name="_subject" value="✨ Nouvelle demande de lecture numérologique">
+        <div class="num-field"><label>Votre prénom &amp; nom *</label><input type="text" name="nom_complet" placeholder="Ex : Marie Dupont" required></div>
+        <div class="num-field"><label>Email *</label><input type="email" name="email" placeholder="votre@email.fr" required></div>
+        <div class="num-field"><label>Téléphone</label><input type="tel" name="telephone" placeholder="06 XX XX XX XX"></div>
+        <div class="num-field"><label>Date de naissance *</label><input type="date" name="date_naissance" required></div>
         <div class="num-field-row">
-          <div class="num-field">
-            <label>Heure de naissance *</label>
-            <input type="time" name="heure_naissance" required>
-          </div>
-          <div class="num-field">
-            <label>Lieu de naissance *</label>
-            <input type="text" name="lieu_naissance" placeholder="Ex : Lyon, France" required>
-          </div>
+          <div class="num-field"><label>Heure de naissance *</label><input type="time" name="heure_naissance" required></div>
+          <div class="num-field"><label>Lieu de naissance *</label><input type="text" name="lieu_naissance" placeholder="Ex : Lyon, France" required></div>
         </div>
-
-        <div class="num-field">
-          <label>Tous vos noms (nom de naissance, nom d'usage…) *</label>
-          <input type="text" name="tous_noms" placeholder="Ex : Dupont, Martin..." required>
-        </div>
-
-        <div class="num-field">
-          <label>Tous vos prénoms *</label>
-          <input type="text" name="tous_prenoms" placeholder="Ex : Marie, Anne, Claire..." required>
-        </div>
-
-        <div class="num-field">
-          <label>Message (facultatif)</label>
-          <textarea name="message" placeholder="Ce que vous souhaitez explorer, vos attentes..."></textarea>
-        </div>
-
+        <div class="num-field"><label>Tous vos noms *</label><input type="text" name="tous_noms" placeholder="Nom de naissance, nom d'usage…" required></div>
+        <div class="num-field"><label>Tous vos prénoms *</label><input type="text" name="tous_prenoms" placeholder="Ex : Marie, Anne, Claire…" required></div>
+        <div class="num-field"><label>Message (facultatif)</label><textarea name="message" placeholder="Vos attentes…"></textarea></div>
         <button type="submit" class="num-submit">Envoyer ma demande →</button>
-
-        <div class="num-info" style="display:flex;flex-direction:column;gap:1rem;">
-          <p>📧 Vos informations seront transmises à Amandyne. Procédez ensuite au paiement pour finaliser votre commande.</p>
-          <a href="https://pay.sumup.com/b2c/QALVII5T" target="_blank" rel="noopener" 
-             style="display:block;text-align:center;padding:.85rem;border:1px solid var(--border-h);color:var(--gold);font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;border-radius:6px;text-decoration:none;transition:background .2s;"
-             onmouseover="this.style.background='rgba(212,168,69,0.1)'" onmouseout="this.style.background='transparent'">
+        <div style="margin-top:1rem;display:flex;flex-direction:column;gap:.8rem;">
+          <p style="font-size:.78rem;color:var(--muted);text-align:center;">Puis procédez au paiement pour finaliser :</p>
+          <a href="https://pay.sumup.com/b2c/QALVII5T" target="_blank" rel="noopener"
+             style="display:block;text-align:center;padding:.85rem;border:1px solid var(--border-h);color:var(--gold);font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;border-radius:6px;text-decoration:none;">
             Payer 65 € en ligne →
           </a>
         </div>
       </form>
     </div>
-
-    <div class="num-success" id="numSuccess">
+    <div class="num-success" id="numSuccess" style="display:none;text-align:center;padding:2rem;">
       <div style="font-size:2.5rem;margin-bottom:1rem;">✨</div>
-      <h4>Demande envoyée !</h4>
-      <p>Amandyne vous contactera très prochainement pour confirmer votre lecture numérologique et vous transmettre le lien de paiement.</p>
-      <br>
-      <p style="color:var(--gold);">À très bientôt 🌿</p>
+      <h4 style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;color:var(--gold-l);margin-bottom:.8rem;">Demande envoyée !</h4>
+      <p style="font-size:.88rem;color:var(--ivory-d);line-height:1.8;">Amandyne vous contactera très prochainement. N'oubliez pas de procéder au paiement.</p>
+      <a href="https://pay.sumup.com/b2c/QALVII5T" target="_blank" rel="noopener" class="btn-primary" style="margin-top:1.5rem;display:inline-block;">Payer 65 € →</a>
     </div>
   </div>
 </div>
@@ -1462,272 +1233,57 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 3
   </div>
 </div>
 
+<!-- REVIEW POPUP -->
+<div class="review-overlay" id="reviewPopup" onclick="closeReviewOverlay(event)">
+  <div class="review-box">
+    <button class="review-close" onclick="closeReviewPopup()">✕</button>
+    <div id="reviewMain">
+      <div class="review-title">Votre avis</div>
+      <p class="review-sub">Votre retour est précieux pour Amandyne 🌿</p>
+      <div class="stars-row" id="starsRow">
+        <button class="star-btn" onclick="selectStar(1)" onmouseover="hoverStar(1)" onmouseout="resetHover()">★</button>
+        <button class="star-btn" onclick="selectStar(2)" onmouseover="hoverStar(2)" onmouseout="resetHover()">★</button>
+        <button class="star-btn" onclick="selectStar(3)" onmouseover="hoverStar(3)" onmouseout="resetHover()">★</button>
+        <button class="star-btn" onclick="selectStar(4)" onmouseover="hoverStar(4)" onmouseout="resetHover()">★</button>
+        <button class="star-btn" onclick="selectStar(5)" onmouseover="hoverStar(5)" onmouseout="resetHover()">★</button>
+      </div>
+      <div class="star-label" id="starLabel">Cliquez sur une étoile</div>
+      <div class="review-form" id="reviewForm">
+        <form id="reviewFormEl">
+          <input type="hidden" name="_subject" id="reviewSubject" value="">
+          <input type="hidden" name="note" id="reviewNote" value="">
+          <div class="review-field"><label>Votre prénom *</label><input type="text" name="prenom" placeholder="Ex : Marie" required></div>
+          <div class="review-field"><label>Votre avis *</label><textarea name="avis" placeholder="Partagez votre expérience..." required></textarea></div>
+          <div class="review-field"><label>Email (facultatif)</label><input type="email" name="email" placeholder="Pour qu'Amandyne puisse vous répondre"></div>
+          <button type="submit" class="review-submit">Envoyer mon avis →</button>
+        </form>
+      </div>
+    </div>
+    <div class="review-success" id="reviewSuccess" style="display:none;padding:1rem 0;text-align:center;">
+      <div class="review-success-icon" id="reviewSuccessIcon">✨</div>
+      <h4 id="reviewSuccessTitle" style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;color:var(--gold-l);margin:.8rem 0;">Merci !</h4>
+      <p id="reviewSuccessText" style="font-size:.88rem;color:var(--ivory-d);line-height:1.8;"></p>
+    </div>
+  </div>
+</div>
+
 <script>
   window.scrollTo(0, 0);
+  history.scrollRestoration = "manual";
 
+  // Scroll reveal
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
+  // Nav shrink
   window.addEventListener('scroll', () => {
     document.getElementById('mainNav').style.padding =
       window.scrollY > 60 ? '.75rem 2.5rem' : '1rem 2.5rem';
   });
 
-  const soinsData = [
-    {
-      num: "01",
-      title: "Magnétisme",
-      desc: "Pour accompagner le corps lorsqu'il est épuisé, douloureux ou en surcharge. Un espace de détente profonde pour remettre du mouvement là où tout semblait figé.",
-      tags: ["Fatigue", "Tensions", "Douleurs", "Stress", "Sommeil", "Apaisement"]
-    },
-    {
-      num: "02",
-      title: "Libération émotionnelle",
-      desc: "Un espace pour déposer ce qui pèse intérieurement depuis trop longtemps. Dans un cadre d'écoute bienveillant, sans jugement, pour retrouver clarté et équilibre intérieur.",
-      tags: ["Charge mentale", "Émotions bloquées", "Hypersensibilité", "Traumas", "Schémas répétitifs"]
-    },
-    {
-      num: "03",
-      title: "Coupeuse de feu",
-      desc: "Accompagnement énergétique complémentaire pour apaiser certaines sensations de brûlures ou inflammations. Une approche douce et apaisante.",
-      tags: ["Brûlures", "Radiothérapie", "Zona", "Douleurs cutanées", "Inflammations"]
-    },
-    {
-      num: "04",
-      title: "Séances intuitives corps & émotions",
-      desc: "Parce que parfois, le corps et l'émotionnel demandent à être entendus ensemble. Une approche profondément humaine et intuitive, au cœur du corps & de l'esprit.",
-      tags: ["Corps & esprit", "Intuitif", "Sur mesure", "Global"]
-    }
-  ];
-
-  // ══ ALOE POPUP ══
-  function openAloePopup() {
-    document.getElementById('aloePopup').classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
-  function closeAloePopup() {
-    document.getElementById('aloePopup').classList.remove('open');
-    document.body.style.overflow = '';
-  }
-  function closeAloeOverlay(e) {
-    if (e.target === document.getElementById('aloePopup')) closeAloePopup();
-  }
-
-  // ══ CARTE CADEAU POPUP ══
-  function openCartePopup() {
-    document.getElementById('cartePopup').classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
-  function closeCartePopup() {
-    document.getElementById('cartePopup').classList.remove('open');
-    document.body.style.overflow = '';
-    setTimeout(() => {
-      document.getElementById('carteMain').style.display = 'block';
-      document.getElementById('carteSuccess').style.display = 'none';
-      document.getElementById('carteFormEl').reset();
-    }, 300);
-  }
-  function closeCarteOverlay(e) {
-    if (e.target === document.getElementById('cartePopup')) closeCartePopup();
-  }
-
-  document.addEventListener('DOMContentLoaded', function() {
-    const carteForm = document.getElementById('carteFormEl');
-    if (carteForm) {
-      carteForm.addEventListener('submit', async function(e) {
-        e.preventDefault();
-        const btn = carteForm.querySelector('.carte-submit');
-        btn.textContent = 'Envoi en cours...';
-        btn.disabled = true;
-        try {
-          const res = await fetch(carteForm.action, {
-            method: 'POST',
-            body: new FormData(carteForm),
-            headers: { 'Accept': 'application/json' }
-          });
-          if (res.ok) {
-            document.getElementById('carteMain').style.display = 'none';
-            document.getElementById('carteSuccess').style.display = 'block';
-          } else {
-            btn.textContent = 'Erreur — réessayez';
-            btn.disabled = false;
-          }
-        } catch {
-          btn.textContent = 'Erreur — réessayez';
-          btn.disabled = false;
-        }
-      });
-    }
-  });
-
-  // ══ REVIEW SYSTEM ══
-  let selectedStars = 0;
-  const starLabels = ['', 'Très décevant', 'Décevant', 'Correct', 'Bien', 'Excellent !'];
-
-  function openReviewPopup() {
-    document.getElementById('reviewPopup').classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
-  function closeReviewPopup() {
-    document.getElementById('reviewPopup').classList.remove('open');
-    document.body.style.overflow = '';
-    setTimeout(() => {
-      selectedStars = 0;
-      document.querySelectorAll('.star-btn').forEach(s => s.classList.remove('active'));
-      document.getElementById('starLabel').textContent = 'Cliquez sur une étoile';
-      document.getElementById('reviewForm').classList.remove('show');
-      document.getElementById('reviewMain').style.display = 'block';
-      document.getElementById('reviewSuccess').style.display = 'none';
-      document.getElementById('reviewFormEl').reset();
-    }, 300);
-  }
-  function closeReviewOverlay(e) {
-    if (e.target === document.getElementById('reviewPopup')) closeReviewPopup();
-  }
-  function hoverStar(val) {
-    if (selectedStars > 0) return;
-    document.querySelectorAll('.star-btn').forEach((s, i) => {
-      s.classList.toggle('active', i < val);
-    });
-    document.getElementById('starLabel').textContent = starLabels[val];
-  }
-  function resetHover() {
-    if (selectedStars > 0) return;
-    document.querySelectorAll('.star-btn').forEach(s => s.classList.remove('active'));
-    document.getElementById('starLabel').textContent = 'Cliquez sur une étoile';
-  }
-  function selectStar(val) {
-    selectedStars = val;
-    document.querySelectorAll('.star-btn').forEach((s, i) => {
-      s.classList.toggle('active', i < val);
-    });
-    document.getElementById('starLabel').textContent = starLabels[val] + ' (' + val + '/5)';
-    document.getElementById('reviewNote').value = val + '/5';
-
-    if (val >= 4) {
-      document.getElementById('reviewSubject').value = '⭐ AVIS POSITIF (' + val + '/5) — À PUBLIER sur le site';
-    } else {
-      document.getElementById('reviewSubject').value = '🔒 AVIS PRIVÉ (' + val + '/5) — Ne pas publier';
-    }
-    setTimeout(() => {
-      document.getElementById('reviewForm').classList.add('show');
-    }, 200);
-  }
-
-  document.addEventListener('DOMContentLoaded', function() {
-    const form = document.getElementById('reviewFormEl');
-    if (form) {
-      form.addEventListener('submit', async function(e) {
-        e.preventDefault();
-        const btn = form.querySelector('.review-submit');
-        btn.textContent = 'Envoi en cours...';
-        btn.disabled = true;
-        try {
-          const res = await fetch('https://formspree.io/f/mjgdavob', {
-            method: 'POST',
-            body: new FormData(form),
-            headers: { 'Accept': 'application/json' }
-          });
-          document.getElementById('reviewMain').style.display = 'none';
-          const success = document.getElementById('reviewSuccess');
-          success.style.display = 'block';
-          if (selectedStars >= 4) {
-            document.getElementById('reviewSuccessIcon').textContent = '✨';
-            document.getElementById('reviewSuccessTitle').textContent = 'Merci pour votre beau retour !';
-            document.getElementById('reviewSuccessText').textContent = 'Votre témoignage a été transmis à Amandyne. Il pourra bientôt apparaître sur le site.';
-          } else {
-            document.getElementById('reviewSuccessIcon').textContent = '🙏';
-            document.getElementById('reviewSuccessTitle').textContent = 'Merci pour votre retour.';
-            document.getElementById('reviewSuccessText').textContent = 'Votre message a été transmis en privé à Amandyne. Elle reviendra vers vous si nécessaire.';
-          }
-        } catch {
-          btn.textContent = 'Erreur — réessayez';
-          btn.disabled = false;
-        }
-      });
-    }
-  });
-
-  function openNumPopup() {
-    document.getElementById('numPopup').classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
-  function closeNumPopupBtn() {
-    document.getElementById('numPopup').classList.remove('open');
-    document.body.style.overflow = '';
-  }
-  function closeNumPopup(e) {
-    if (e.target === document.getElementById('numPopup')) closeNumPopupBtn();
-  }
-
-  // Formspree form submission
-  document.addEventListener('DOMContentLoaded', function() {
-    const form = document.getElementById('numerologieForm');
-    if (form) {
-      form.addEventListener('submit', async function(e) {
-        e.preventDefault();
-        const btn = form.querySelector('.num-submit');
-        btn.textContent = 'Envoi en cours...';
-        btn.disabled = true;
-        try {
-          const res = await fetch(form.action, {
-            method: 'POST',
-            body: new FormData(form),
-            headers: { 'Accept': 'application/json' }
-          });
-          if (res.ok) {
-            document.getElementById('numForm').style.display = 'none';
-            document.getElementById('numSuccess').style.display = 'block';
-          } else {
-            btn.textContent = 'Erreur — réessayez';
-            btn.disabled = false;
-          }
-        } catch {
-          btn.textContent = 'Erreur — réessayez';
-          btn.disabled = false;
-        }
-      });
-    }
-  });
-
-  function openSoinPopup(index) {
-    if (window.innerWidth > 768) return;
-    const data = soinsData[index];
-    document.getElementById('popupNum').textContent = '0' + (index+1);
-    document.getElementById('popupTitle').textContent = data.title;
-    document.getElementById('popupDesc').textContent = data.desc;
-    const tagsEl = document.getElementById('popupTags');
-    tagsEl.innerHTML = data.tags.map(t => '<span class="soin-popup-tag">' + t + '</span>').join('');
-    const overlay = document.getElementById('soinPopup');
-    overlay.classList.add('open');
-    document.body.style.overflow = 'hidden';
-    // Close on scroll
-    overlay.addEventListener('scroll', closeSoinPopup, { once: true });
-  }
-
-  function closeSoinPopup() {
-    document.getElementById('soinPopup').classList.remove('open');
-    document.body.style.overflow = '';
-  }
-
-  function closePopup(e) {
-    if (e.target === document.getElementById('soinPopup')) closeSoinPopup();
-  }
-
-  function toggleSoin(header) {
-    const card = header.parentElement;
-    const wasOpen = card.classList.contains('open');
-    document.querySelectorAll('.soin-card').forEach(c => c.classList.remove('open'));
-    if (!wasOpen) {
-      card.classList.add('open');
-      setTimeout(() => {
-        card.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }, 50);
-    }
-  }
-
+  // Hamburger
   function toggleMenu() {
     const menu = document.getElementById('mobileMenu');
     const btn  = document.getElementById('hamburger');
@@ -1741,12 +1297,135 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 3
     document.body.style.overflow = '';
   }
 
+  // FAQ
   function toggleFaq(el) {
     const item = el.parentElement;
     const wasOpen = item.classList.contains('open');
     document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
     if (!wasOpen) item.classList.add('open');
   }
+
+  // Soin popup (mobile)
+  const soinsData = [
+    { num:"01", title:"Magnétisme", desc:"Pour accompagner le corps lorsqu'il est épuisé, douloureux ou en surcharge. Un espace de détente profonde pour remettre du mouvement là où tout semblait figé.", tags:["Fatigue","Tensions","Douleurs","Stress","Sommeil","Apaisement"] },
+    { num:"02", title:"Libération émotionnelle", desc:"Un espace pour déposer ce qui pèse intérieurement depuis trop longtemps. Dans un cadre bienveillant, sans jugement, pour retrouver clarté et équilibre intérieur.", tags:["Charge mentale","Émotions bloquées","Hypersensibilité","Traumas","Schémas répétitifs"] },
+    { num:"03", title:"Coupeuse de feu", desc:"Accompagnement énergétique complémentaire pour apaiser certaines sensations de brûlures ou inflammations. Une approche douce et apaisante.", tags:["Brûlures","Radiothérapie","Zona","Douleurs cutanées","Inflammations"] },
+    { num:"04", title:"Séances intuitives corps & émotions", desc:"Parce que parfois, le corps et l'émotionnel demandent à être entendus ensemble. Une approche profondément humaine et intuitive.", tags:["Corps & esprit","Intuitif","Sur mesure","Global"] }
+  ];
+  function openSoinPopup(index) {
+    if (window.innerWidth > 768) return;
+    const data = soinsData[index];
+    document.getElementById('popupNum').textContent = '0'+(index+1);
+    document.getElementById('popupTitle').textContent = data.title;
+    document.getElementById('popupDesc').textContent = data.desc;
+    const tagsEl = document.getElementById('popupTags');
+    tagsEl.innerHTML = data.tags.map(t => '<span class="soin-popup-tag">'+t+'</span>').join('');
+    document.getElementById('soinPopup').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeSoinPopup() {
+    document.getElementById('soinPopup').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  function closePopup(e) {
+    if (e.target === document.getElementById('soinPopup')) closeSoinPopup();
+  }
+
+  // Aloe popup
+  function openAloePopup() { document.getElementById('aloePopup').classList.add('open'); document.body.style.overflow='hidden'; }
+  function closeAloePopup() { document.getElementById('aloePopup').classList.remove('open'); document.body.style.overflow=''; }
+  function closeAloeOverlay(e) { if (e.target===document.getElementById('aloePopup')) closeAloePopup(); }
+
+  // Carte cadeau popup
+  function openCartePopup() { document.getElementById('cartePopup').classList.add('open'); document.body.style.overflow='hidden'; }
+  function closeCartePopup() {
+    document.getElementById('cartePopup').classList.remove('open');
+    document.body.style.overflow='';
+    setTimeout(()=>{ document.getElementById('carteMain').style.display='block'; document.getElementById('carteSuccess').style.display='none'; document.getElementById('carteFormEl').reset(); },300);
+  }
+  function closeCarteOverlay(e) { if (e.target===document.getElementById('cartePopup')) closeCartePopup(); }
+
+  // Numérologie popup
+  function openNumPopup() { document.getElementById('numPopup').classList.add('open'); document.body.style.overflow='hidden'; }
+  function closeNumPopupBtn() { document.getElementById('numPopup').classList.remove('open'); document.body.style.overflow=''; }
+  function closeNumPopup(e) { if (e.target===document.getElementById('numPopup')) closeNumPopupBtn(); }
+
+  // Review popup
+  let selectedStars = 0;
+  const starLabels = ['','Très décevant','Décevant','Correct','Bien','Excellent !'];
+  function openReviewPopup() { document.getElementById('reviewPopup').classList.add('open'); document.body.style.overflow='hidden'; }
+  function closeReviewPopup() {
+    document.getElementById('reviewPopup').classList.remove('open');
+    document.body.style.overflow='';
+    setTimeout(()=>{ selectedStars=0; document.querySelectorAll('.star-btn').forEach(s=>s.classList.remove('active')); document.getElementById('starLabel').textContent='Cliquez sur une étoile'; document.getElementById('reviewForm').classList.remove('show'); document.getElementById('reviewMain').style.display='block'; document.getElementById('reviewSuccess').style.display='none'; document.getElementById('reviewFormEl').reset(); },300);
+  }
+  function closeReviewOverlay(e) { if (e.target===document.getElementById('reviewPopup')) closeReviewPopup(); }
+  function hoverStar(val) { if(selectedStars>0)return; document.querySelectorAll('.star-btn').forEach((s,i)=>s.classList.toggle('active',i<val)); document.getElementById('starLabel').textContent=starLabels[val]; }
+  function resetHover() { if(selectedStars>0)return; document.querySelectorAll('.star-btn').forEach(s=>s.classList.remove('active')); document.getElementById('starLabel').textContent='Cliquez sur une étoile'; }
+  function selectStar(val) {
+    selectedStars=val;
+    document.querySelectorAll('.star-btn').forEach((s,i)=>s.classList.toggle('active',i<val));
+    document.getElementById('starLabel').textContent=starLabels[val]+' ('+val+'/5)';
+    document.getElementById('reviewNote').value=val+'/5';
+    document.getElementById('reviewSubject').value=val>=4?'⭐ AVIS POSITIF ('+val+'/5) — À PUBLIER':'🔒 AVIS PRIVÉ ('+val+'/5) — Ne pas publier';
+    setTimeout(()=>document.getElementById('reviewForm').classList.add('show'),200);
+  }
+
+  // Form submissions
+  document.addEventListener('DOMContentLoaded', function() {
+    // Numérologie
+    const numForm = document.getElementById('numerologieForm');
+    if (numForm) {
+      numForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const btn = numForm.querySelector('.num-submit');
+        btn.textContent='Envoi en cours...'; btn.disabled=true;
+        try {
+          const res = await fetch('https://formspree.io/f/mykanypw', { method:'POST', body:new FormData(numForm), headers:{'Accept':'application/json'} });
+          if (res.ok) { document.getElementById('numForm').style.display='none'; document.getElementById('numSuccess').style.display='block'; }
+          else { btn.textContent='Erreur — réessayez'; btn.disabled=false; }
+        } catch { btn.textContent='Erreur — réessayez'; btn.disabled=false; }
+      });
+    }
+    // Carte cadeau
+    const carteForm = document.getElementById('carteFormEl');
+    if (carteForm) {
+      carteForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const btn = carteForm.querySelector('.carte-submit');
+        btn.textContent='Envoi en cours...'; btn.disabled=true;
+        try {
+          const res = await fetch('https://formspree.io/f/mjgdavob', { method:'POST', body:new FormData(carteForm), headers:{'Accept':'application/json'} });
+          if (res.ok) { document.getElementById('carteMain').style.display='none'; document.getElementById('carteSuccess').style.display='block'; }
+          else { btn.textContent='Erreur — réessayez'; btn.disabled=false; }
+        } catch { btn.textContent='Erreur — réessayez'; btn.disabled=false; }
+      });
+    }
+    // Avis
+    const reviewForm = document.getElementById('reviewFormEl');
+    if (reviewForm) {
+      reviewForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const btn = reviewForm.querySelector('.review-submit');
+        btn.textContent='Envoi en cours...'; btn.disabled=true;
+        try {
+          const res = await fetch('https://formspree.io/f/mjgdavob', { method:'POST', body:new FormData(reviewForm), headers:{'Accept':'application/json'} });
+          document.getElementById('reviewMain').style.display='none';
+          const success = document.getElementById('reviewSuccess');
+          success.style.display='block';
+          if (selectedStars>=4) {
+            document.getElementById('reviewSuccessIcon').textContent='✨';
+            document.getElementById('reviewSuccessTitle').textContent='Merci pour votre beau retour !';
+            document.getElementById('reviewSuccessText').textContent='Votre témoignage a été transmis à Amandyne. Il pourra bientôt apparaître sur le site.';
+          } else {
+            document.getElementById('reviewSuccessIcon').textContent='🙏';
+            document.getElementById('reviewSuccessTitle').textContent='Merci pour votre retour.';
+            document.getElementById('reviewSuccessText').textContent='Votre message a été transmis en privé à Amandyne.';
+          }
+        } catch { btn.textContent='Erreur — réessayez'; btn.disabled=false; }
+      });
+    }
+  });
 </script>
 </body>
 </html>
