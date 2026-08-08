@@ -306,6 +306,43 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 3
   color: var(--gold-l); text-align: center; line-height: 1.4;
 }
 
+/* ══ BIJOUX POPUP ══ */
+.bijoux-overlay {
+  display: none; position: fixed; inset: 0; z-index: 600;
+  background: rgba(4,2,1,0.92); backdrop-filter: blur(12px);
+  align-items: center; justify-content: center; padding: 1.5rem;
+}
+.bijoux-overlay.open { display: flex; animation: fadeIn .25s ease; }
+.bijoux-box {
+  background: var(--bg2); border: 1px solid var(--border-h);
+  border-radius: 16px; padding: 2rem 1.5rem;
+  width: 100%; max-width: 520px; max-height: 90vh; overflow-y: auto;
+  position: relative;
+}
+.bijoux-box h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 300; color: var(--ivory); margin-bottom: .3rem; text-align: center; }
+.bijoux-sub { font-size: .82rem; color: var(--ivory-d); text-align: center; margin-bottom: 1.5rem; }
+.bijoux-list { list-style: none; display: flex; flex-direction: column; gap: 0; }
+.bijoux-item {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: .85rem 0; border-bottom: 1px solid var(--border);
+}
+.bijoux-item:last-child { border-bottom: none; }
+.bijoux-name { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 400; color: var(--ivory); }
+.bijoux-price { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 300; color: var(--gold-l); white-space: nowrap; }
+.bijoux-btn {
+  font-size: .65rem; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--gold); border: 1px solid var(--border-h);
+  padding: .3rem .7rem; border-radius: 4px; text-decoration: none;
+  white-space: nowrap; transition: background .2s, color .2s;
+}
+.bijoux-btn:hover { background: var(--gold); color: var(--bg); }
+
+.bijoux-order {
+  margin-top: 1.5rem; text-align: center;
+  padding-top: 1.2rem; border-top: 1px solid var(--border);
+}
+.bijoux-order p { font-size: .82rem; color: var(--muted); margin-bottom: 1rem; }
+
 /* ══ ALOE POPUP ══ */
 .aloe-overlay, .carte-overlay {
   display: none; position: fixed; inset: 0; z-index: 600;
@@ -918,19 +955,19 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 3
       </div>
 
       <!-- Bijoux en Pierres Naturelles -->
-      <div class="boutique-item boutique-soon">
+      <div onclick="openBijouxPopup()" class="boutique-item" style="cursor:pointer;">
         <div class="boutique-img-wrap">
-          <img src="/pierre.webp" alt="Bijoux en Pierres Naturelles" class="boutique-img" style="opacity:.5;">
+          <img src="/pierre.webp" alt="Bijoux en Pierres Naturelles" class="boutique-img">
         </div>
-        <div class="boutique-label">Bijoux en Pierres Naturelles <span style="font-size:.68rem;color:var(--gold);display:block;letter-spacing:.1em;text-transform:uppercase;">Bientôt</span></div>
+        <div class="boutique-label">Bijoux en Pierres Naturelles</div>
       </div>
 
       <!-- Pierres & Galets de Soin -->
-      <div class="boutique-item boutique-soon">
+      <div onclick="openPierresPopup()" class="boutique-item" style="cursor:pointer;">
         <div class="boutique-img-wrap">
-          <img src="/pierres-galets.webp" alt="Pierres et Galets de Soin" class="boutique-img" style="opacity:.5;">
+          <img src="/pierres-galets.webp" alt="Pierres et Galets de Soin" class="boutique-img">
         </div>
-        <div class="boutique-label">Pierres & Galets de Soin <span style="font-size:.68rem;color:var(--gold);display:block;letter-spacing:.1em;text-transform:uppercase;">Bientôt</span></div>
+        <div class="boutique-label">Pierres & Galets de Soin</div>
       </div>
 
       <!-- Coffrets Bien-Être — bientôt -->
@@ -1102,6 +1139,167 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 3
 <div style="background:var(--bg2);border-top:1px solid var(--border);padding:1rem 2.5rem;display:flex;align-items:center;justify-content:space-between;font-size:.72rem;color:var(--muted);flex-wrap:wrap;gap:.5rem;">
   <span>© 2025 Les Mains d'Âme En Dyne · Amandyne</span>
   <span>Doissin, Isère — Fait avec soin</span>
+</div>
+
+<!-- PIERRES & GALETS DE SOIN POPUP -->
+<div class="bijoux-overlay" id="pierresPopup" onclick="document.getElementById('pierresPopup').classList.remove('open');document.body.style.overflow='';">
+  <div class="bijoux-box">
+    <button class="popup-close-btn" onclick="document.getElementById('pierresPopup').classList.remove('open');document.body.style.overflow='';">✕</button>
+    <h3>Pierres & Galets de Soin</h3>
+    <p class="bijoux-sub">Des produits pour accompagner votre bien-être au quotidien 🌿</p>
+
+    <ul class="bijoux-list">
+
+      <li class="bijoux-item" style="flex-direction:column;align-items:flex-start;gap:.6rem;padding:1.2rem 0;">
+        <div style="display:flex;justify-content:space-between;width:100%;align-items:center;">
+          <span class="bijoux-name">Galet de Sélénite</span>
+          <div style="display:flex;align-items:center;gap:.8rem;">
+            <span class="bijoux-price">24,90 €</span>
+            <a href="https://pay.sumup.com/b2c/QMJC4YHJ" target="_blank" rel="noopener" class="bijoux-btn">Commander →</a>
+          </div>
+        </div>
+        <p style="font-size:.8rem;color:var(--muted);line-height:1.7;">Doux au toucher et naturellement lumineux, le galet de Sélénite accompagne un moment de détente et favorise une sensation d'apaisement. Idéal lors d'une méditation ou d'une pause recentrante.</p>
+      </li>
+
+      <li class="bijoux-item" style="flex-direction:column;align-items:flex-start;gap:.6rem;padding:1.2rem 0;">
+        <div style="display:flex;justify-content:space-between;width:100%;align-items:center;">
+          <span class="bijoux-name">Roll-on « Stress & Émotions »</span>
+          <div style="display:flex;align-items:center;gap:.8rem;">
+            <span class="bijoux-price">9,90 €</span>
+            <a href="https://pay.sumup.com/b2c/QVT1Q5AD" target="_blank" rel="noopener" class="bijoux-btn">Commander →</a>
+          </div>
+        </div>
+        <p style="font-size:.8rem;color:var(--muted);line-height:1.7;">Huiles essentielles biologiques pour accompagner les périodes de stress et de surcharge émotionnelle. Application sur les poignets, tempes ou nuque. ⚠️ Réservé à l'adulte.</p>
+      </li>
+
+      <li class="bijoux-item" style="flex-direction:column;align-items:flex-start;gap:.6rem;padding:1.2rem 0;">
+        <div style="display:flex;justify-content:space-between;width:100%;align-items:center;">
+          <span class="bijoux-name">Fagot de Sauge Blanche</span>
+          <div style="display:flex;align-items:center;gap:.8rem;">
+            <span class="bijoux-price">6,90 €</span>
+            <a href="https://pay.sumup.com/b2c/QB61IKAO" target="_blank" rel="noopener" class="bijoux-btn">Commander →</a>
+          </div>
+        </div>
+      </li>
+
+      <li class="bijoux-item" style="flex-direction:column;align-items:flex-start;gap:.6rem;padding:1.2rem 0;">
+        <div style="display:flex;justify-content:space-between;width:100%;align-items:center;">
+          <span class="bijoux-name">Palo Santo — un bâtonnet</span>
+          <div style="display:flex;align-items:center;gap:.8rem;">
+            <span class="bijoux-price">2,90 €</span>
+            <a href="https://pay.sumup.com/b2c/Q1IVETHZ" target="_blank" rel="noopener" class="bijoux-btn">Commander →</a>
+          </div>
+        </div>
+      </li>
+
+      <li class="bijoux-item" style="flex-direction:column;align-items:flex-start;gap:.6rem;padding:1.2rem 0;">
+        <div style="display:flex;justify-content:space-between;width:100%;align-items:center;">
+          <span class="bijoux-name">Porte-clés Arbre de Vie</span>
+          <div style="display:flex;align-items:center;gap:.8rem;">
+            <span class="bijoux-price">8,90 €</span>
+            <a href="https://pay.sumup.com/b2c/QATXX9A4" target="_blank" rel="noopener" class="bijoux-btn">Commander →</a>
+          </div>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+</div>
+
+<!-- BIJOUX EN PIERRES NATURELLES POPUP -->
+<div class="bijoux-overlay" id="bijouxPopup" onclick="closeBijouxOverlay(event)">
+  <div class="bijoux-box">
+    <button class="popup-close-btn" onclick="closeBijouxPopup()">✕</button>
+    <h3>Bracelets en Pierres Naturelles</h3>
+    <p class="bijoux-sub">Cliquez sur un bracelet pour commander directement en ligne 🌿</p>
+
+    <ul class="bijoux-list">
+      <li class="bijoux-item">
+        <span class="bijoux-name">Sodalite</span>
+        <div style="display:flex;align-items:center;gap:.8rem;">
+          <span class="bijoux-price">21,90 €</span>
+          <a href="https://pay.sumup.com/b2c/Q6QRB8LH" target="_blank" rel="noopener" class="bijoux-btn">Commander →</a>
+        </div>
+      </li>
+      <li class="bijoux-item">
+        <span class="bijoux-name">Améthyste</span>
+        <div style="display:flex;align-items:center;gap:.8rem;">
+          <span class="bijoux-price">21,90 €</span>
+          <a href="https://pay.sumup.com/b2c/Q6XYMEEA" target="_blank" rel="noopener" class="bijoux-btn">Commander →</a>
+        </div>
+      </li>
+      <li class="bijoux-item">
+        <span class="bijoux-name">Fluorite</span>
+        <div style="display:flex;align-items:center;gap:.8rem;">
+          <span class="bijoux-price">24,90 €</span>
+          <a href="https://pay.sumup.com/b2c/QZ7QKBNK" target="_blank" rel="noopener" class="bijoux-btn">Commander →</a>
+        </div>
+      </li>
+      <li class="bijoux-item">
+        <span class="bijoux-name">Chrysoprase</span>
+        <div style="display:flex;align-items:center;gap:.8rem;">
+          <span class="bijoux-price">34,90 €</span>
+          <a href="https://pay.sumup.com/b2c/QUQX3PRO" target="_blank" rel="noopener" class="bijoux-btn">Commander →</a>
+        </div>
+      </li>
+      <li class="bijoux-item">
+        <span class="bijoux-name">Lépidolite</span>
+        <div style="display:flex;align-items:center;gap:.8rem;">
+          <span class="bijoux-price">24,90 €</span>
+          <a href="https://pay.sumup.com/b2c/QNVNJ1P3" target="_blank" rel="noopener" class="bijoux-btn">Commander →</a>
+        </div>
+      </li>
+      <li class="bijoux-item">
+        <span class="bijoux-name">Aventurine</span>
+        <div style="display:flex;align-items:center;gap:.8rem;">
+          <span class="bijoux-price">21,90 €</span>
+          <a href="https://pay.sumup.com/b2c/QV7DOXR3" target="_blank" rel="noopener" class="bijoux-btn">Commander →</a>
+        </div>
+      </li>
+      <li class="bijoux-item">
+        <span class="bijoux-name">Cristal de Roche</span>
+        <div style="display:flex;align-items:center;gap:.8rem;">
+          <span class="bijoux-price">24,90 €</span>
+          <a href="https://pay.sumup.com/b2c/QR2E9K3Y" target="_blank" rel="noopener" class="bijoux-btn">Commander →</a>
+        </div>
+      </li>
+      <li class="bijoux-item">
+        <span class="bijoux-name">Sélénite</span>
+        <div style="display:flex;align-items:center;gap:.8rem;">
+          <span class="bijoux-price">31,90 €</span>
+          <a href="https://pay.sumup.com/b2c/QGJM74CN" target="_blank" rel="noopener" class="bijoux-btn">Commander →</a>
+        </div>
+      </li>
+      <li class="bijoux-item">
+        <span class="bijoux-name">Grenat</span>
+        <div style="display:flex;align-items:center;gap:.8rem;">
+          <span class="bijoux-price">31,90 €</span>
+          <a href="https://pay.sumup.com/b2c/QZTAP1II" target="_blank" rel="noopener" class="bijoux-btn">Commander →</a>
+        </div>
+      </li>
+      <li class="bijoux-item">
+        <span class="bijoux-name">Kunzite</span>
+        <div style="display:flex;align-items:center;gap:.8rem;">
+          <span class="bijoux-price">31,90 €</span>
+          <a href="https://pay.sumup.com/b2c/QAKSV59O" target="_blank" rel="noopener" class="bijoux-btn">Commander →</a>
+        </div>
+      </li>
+      <li class="bijoux-item">
+        <span class="bijoux-name">Amazonite</span>
+        <div style="display:flex;align-items:center;gap:.8rem;">
+          <span class="bijoux-price">21,90 €</span>
+          <a href="https://pay.sumup.com/b2c/QRYHAABI" target="_blank" rel="noopener" class="bijoux-btn">Commander →</a>
+        </div>
+      </li>
+      <li class="bijoux-item">
+        <span class="bijoux-name">Quartz rose</span>
+        <div style="display:flex;align-items:center;gap:.8rem;">
+          <span class="bijoux-price">21,90 €</span>
+          <a href="https://pay.sumup.com/b2c/QEYIWIUR" target="_blank" rel="noopener" class="bijoux-btn">Commander →</a>
+        </div>
+      </li>
+    </ul>
+  </div>
 </div>
 
 <!-- ALOE VERA POPUP -->
