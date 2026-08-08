@@ -1469,6 +1469,29 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 3
   window.scrollTo(0, 0);
   history.scrollRestoration = "manual";
 
+  // ══ BIJOUX POPUP ══
+  function openBijouxPopup() {
+    document.getElementById('bijouxPopup').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeBijouxPopup() {
+    document.getElementById('bijouxPopup').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  function closeBijouxOverlay(e) {
+    if (e.target === document.getElementById('bijouxPopup')) closeBijouxPopup();
+  }
+
+  // ══ PIERRES & GALETS POPUP ══
+  function openPierresPopup() {
+    document.getElementById('pierresPopup').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closePierresPopup() {
+    document.getElementById('pierresPopup').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
   // Scroll reveal
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
